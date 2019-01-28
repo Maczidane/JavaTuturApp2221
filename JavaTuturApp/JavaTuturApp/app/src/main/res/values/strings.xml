@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Java Tutor App</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_questions">Questions</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="basic">Java Basics</string>
+    <string name="advance">Java Advanced Concepts</string>
+    <string name="ordinary">Start Learning the Basics of Java Programming</string>
+    <string name="advanced">Learn Advance concepts of Java Programming</string>
+    <string name="exit">Exit App</string>
+    <string name="Help">Help</string>
+    <string name="contact">Contact Admin</string>
+    <string name="policy">Terms of Service</string>
+
+    <string name="basic_1">Java – Basic Syntax</string>
+    <string name="basic_2">Java – Variable types</string>
+    <string name="basic_3">Java – Basic Data types</string>
+    <string name="basic_4">Java –  Numbers</string>
+    <string name="basic_5">Java – Characters</string>
+    <string name="basic_6">Java – Strings</string>
+    <string name="basic_7">Java – Arrays</string>
+    <string name="basic_8">Java – Objects and Classes</string>
+    <string name="basic_9">Java – Constructors</string>
+    <string name="basic_10">Java – Modifier types</string>
+    <string name="basic_11">Java – Loop Control (if, if…else, else..if, etc.,)</string>
+    <string name="basic_12">Java – Decision Making</string>
+    <string name="basic_13">Java – Date and Time</string>
+    <string name="basic_14">Java – Regular Expressions</string>
+
+    <string name="basic_15">Go To  Java Advanced Tutorials</string>
+
+
+
+    <string name="advanced_1">Java – Methods</string>
+    <string name="advanced_2">Java – Files and I/O</string>
+    <string name="advanced_3">Java – Exceptions</string>
+    <string name="advanced_4">Java –  Inner class</string>
+    <string name="advanced_5">Java – Inheritance</string>
+    <string name="advanced_6">Java – Polymorphism</string>
+    <string name="advanced_7">Java – Abstraction</string>
+    <string name="advanced_8">Java – Encapsulation</string>
+    <string name="advanced_9">Java – Overriding</string>
+    <string name="advanced_10">Java – Interfaces</string>
+    <string name="advanced_11">Java – Packages</string>
+    <string name="advanced_12">Java – Data Structures</string>
+    <string name="advanced_13">Java – Networking</string>
+    <string name="advanced_14">Java – Sending Emails</string>
+
+</resources>
