@@ -1,5 +1,8 @@
 package com.easyhouse24.javatuturapp;
 
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -27,9 +30,50 @@ public class MainActivity extends AppCompatActivity {
 
     private BasicFragment mBasicFragment;
 
+    private MainPageFragment mainPageFragment;
+
     private AdvancedFragment mAdvancedFragment;
 
     private CardView mCardView1;
+
+    private final int NR_OF_SIMULTANEOUS_SOUNDS = 7;
+    private final float LEFT_VOLUME = 1.0f;
+    private final float RIGHT_VOLUME = 1.0f;
+    private final int NO_LOOP = 0;
+    private final int PRIORITY = 0;
+    private final float NORMAL_PLAY_RATE = 1.0f;
+
+    // TODO: Add member variables here
+    private int mClock;
+    private int mDSoundId;
+    private int mESoundId;
+    private int mFSoundId;
+    private int mGSoundId;
+    private int mASoundId;
+    private int mBSoundId;
+
+    private long backPressedTime;
+
+
+
+    private SoundPool mSoundPool;
+
+    private MediaPlayer player;
+
+
+    private BasicFragment basicFragment;
+
+    private AdvancedFragment advancedFragment;
+
+
+
+
+
+
+
+    //Static variables creation to use in another activity
+    static SoundPool mpool;
+    static int mclock2;
 
 
     @Override
@@ -41,61 +85,131 @@ public class MainActivity extends AppCompatActivity {
 
         mBottomNavigationView = (BottomNavigationView) findViewById(R.id.main_nav);
 
-
-        //initializing fragments
-
         mHomeFragment = new HomeFragment();
         mSettingFragment = new SettingFragment();
 
         mQuestionFragment = new QuestionFragment();
 
+        mainPageFragment = new MainPageFragment();
 
-        setFragment(mHomeFragment);
-        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.nav_home:
-                        mBottomNavigationView.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(mHomeFragment);
-                        return true;
+        basicFragment = new BasicFragment();
 
-                    case R.id.nav_questions:
-                        mBottomNavigationView.setItemBackgroundResource(R.color.colorAccent);
-                        setFragment(mQuestionFragment);
-                        return true;
-                    case R.id.nav_settings:
-                        mBottomNavigationView.setItemBackgroundResource(R.color.colorPrimaryDark);
-                        setFragment(mSettingFragment);
-                        return true;
-                    default:
+        advancedFragment = new AdvancedFragment();
+
+
+
+        Bundle s = getIntent().getExtras();
+        if (s != null) {
+            String frag = s.getString("Fragment");
+
+            if (frag.equals("Questions")) {
+                //Toast.makeText(getApplicationContext(),frag,Toast.LENGTH_LONG).show();
+
+                setFragment(mQuestionFragment);
+                mBottomNavigationView.setSelectedItemId(R.id.nav_questions);
+                mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                        switch (menuItem.getItemId())
+                        {
+                            case R.id.nav_back:
+                                onBackPressed();
+                                return true;
+
+
+
+
+
+                        }
                         return false;
-                }
+                    }
+                });
+
             }
-        });
-
-        //Implementing onBackPressed in a Fragment and calling it from MainActivity
-        FragmentManager fm = getSupportFragmentManager();
-        fm.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            @Override
-            public void onBackStackChanged() {
-                if(getFragmentManager().getBackStackEntryCount() == 0) {
-
-                    mBottomNavigationView.setItemBackgroundResource(R.color.colorPrimary);
-                    setFragment(mHomeFragment);
-                }
+            else if (frag.equals("Tutorials")){
+                Toast.makeText(getApplicationContext(),frag,Toast.LENGTH_LONG).show();
             }
-        });
+            else if (frag.equals("Basic")){
 
+                setFragment(basicFragment);
+                mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                        switch (menuItem.getItemId())
+                        {
+                            case R.id.nav_back:
+                                onBackPressed();
+                                return true;
+
+                            case R.id.nav_questions:
+                                setFragment(mQuestionFragment);
+                                return true;
+
+
+
+                        }
+                        return false;
+                    }
+                });
+            }
+            else if (frag.equals("Advanced")){
+                setFragment(advancedFragment);
+                mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                        switch (menuItem.getItemId())
+                        {
+                            case R.id.nav_back:
+                                onBackPressed();
+                                return true;
+
+                            case R.id.nav_questions:
+                                setFragment(mQuestionFragment);
+                                return true;
+
+
+
+                        }
+                        return false;
+                    }
+                });
+            }
+
+            else {
+
+                    Toast.makeText(getApplicationContext(),"Something",Toast.LENGTH_LONG).show();
+
+            }
+        }
+        else{
+
+            Toast.makeText(getApplicationContext(),"No Intent Put extra",Toast.LENGTH_LONG).show();
+
+
+        }
+
+
+    }
+
+    public void questionsClick(View v){
+        mFrameLayout = (FrameLayout) findViewById(R.id.frame);
+        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.main_nav);
+        mQuestionFragment = new QuestionFragment();
+        setFragment(mQuestionFragment);
+        mBottomNavigationView.setVisibility(View.VISIBLE);
+        mBottomNavigationView.setItemBackgroundResource(R.color.colorPrimary);
 
     }
 
 
     //Creating a method to call fragments in frame layout
-    private void setFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment);
-        fragmentTransaction.commit();
+         private void setFragment(Fragment fragment) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragment);
+            fragmentTransaction.commit();
 
     }
 
@@ -122,28 +236,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    boolean doubleBackToExitPressedOnce = false;
+
+
 
     @Override
     public void onBackPressed() {
-   if (doubleBackToExitPressedOnce) {
+
             super.onBackPressed();
-            return;
-        }
 
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
 
 
 
 
     }
+
+    // creating a class from which i can use or call in another activity ie sound pool class
+    public static class otherClass{
+        public void otherMethod(){
+            mpool.play(mclock2,1.0f,1.0f,0,0,1.0f);
+        }
+
+    }
+
 }

@@ -34,7 +34,6 @@
     <string name="basic_15">Go To  Java Advanced Tutorials</string>
 
 
-
     <string name="advanced_1">Java – Methods</string>
     <string name="advanced_2">Java – Files and I/O</string>
     <string name="advanced_3">Java – Exceptions</string>
@@ -45,9 +44,73 @@
     <string name="advanced_8">Java – Encapsulation</string>
     <string name="advanced_9">Java – Overriding</string>
     <string name="advanced_10">Java – Interfaces</string>
+
+    <string name="score_0">Score : 0</string>
+    <string name="questions_1_x">Questions: 1/x</string>
+    <string name="_00_30">00:30</string>
+    <string name="option_1">Option 1</string>
+    <string name="confirm">Confirm</string>
+
     <string name="advanced_11">Java – Packages</string>
+
+    <string name="score">Score : 0</string>
+    <string name="level">Level : </string>
+    <string name="scoreresult">Score : </string>
+    <string name="zero"> 0 </string>
+    <string name="change">Change Subject </string>
+    <string name="grade">Grade : </string>
+    <string name="passed">Passed</string>
+    <string name="naming_subject">Subject Name : </string>
+    <string name="questionaire">Dummy question ?</string>
+    <string name="timeLabel">Time Left : </string>
+    <string name="question">Question : 1/x</string>
+    <string name="time">30 sec</string>
+    <string name="btn">Confrim</string>
+    <string name="snackbar">Now Playing Song in background</string>
+    <string name="turnOff">TurnOff</string>
+    <string name="background">Background Music has been Switched Off</string>
+
+
     <string name="advanced_12">Java – Data Structures</string>
     <string name="advanced_13">Java – Networking</string>
     <string name="advanced_14">Java – Sending Emails</string>
+    <string name="java_basics">Java Basics</string>
+    <string name="java_advanced">Java Advanced</string>
+    <string name="sample_programs">Sample Programs</string>
+    <string name="see_sample_programs">See Sample Programs and  \n learn from them</string>
+    <string name="tutorials">Questions</string>
+    <string name="see_learn_tutorials_in_java_programming_both_basic_and_advanced_concepts">  \n  Learn from tutorials in Java \n programming</string>
+    <string name="get_help_on_how_to_use_this_app_and_other_issues">Get Help on how to use \n this App and other issues</string>
+    <string name="if_you_like_app_n_take_a_minute_to_share_n_app_with_friends">If you like app? \n Take a minute to share \n app with friends</string>
+    <string name="java_introduction">Java - Introduction</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="prerequisites">Prerequisites</string>
+    <string name="this_tutorial_has_been_prepared_for_the_beginners_to_help_them_understand_the_basic_to_advanced_concepts_related_to_java_programming_language">This tutorial has been prepared for the beginners to help them understand the basic to advanced concepts related to Java Programming language.</string>
+    <string name="audience">Audience</string>
+    <string name="java_is_a_high_level_programming_language_originally_developed_by_sun_microsystems_and_released_in_1995_java_runs_on_a_variety_of_platforms_such_as_windows_mac_os_and_the_various_versions_of_unix_this_tutorial_gives_a_complete_understanding_of_java_this_reference_will_take_you_through_simple_and_practical_approaches_while_learning_java_programming_language">Java is a high-level programming language originally developed by Sun Microsystems and released in 1995. Java runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This tutorial gives a complete understanding of Java. This reference will take you through simple and practical approaches while learning Java Programming language.</string>
+    <string name="basic_syntax_text_1">When we consider a Java program, it can be defined as a collection of objects that communicate via invoking each other\'s methods. Let us now briefly look into what do class, object, methods, and instance variables mean. </string>
+    <string name="objects">Objects</string>
+    <string name="object_des">Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.</string>
+    <string name="class_1">Class</string>
+    <string name="class_1_des">A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.</string>
+    <string name="methods">Methods</string>
+    <string name="method_des">A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed</string>
+    <string name="variables">Instance Variables</string>
+    <string name="variables_des">Each object has its unique set of instance variables. An object\'s state is created by the values assigned to these instance variables.</string>
+    <string name="first_java_program">First Java Program</string>
+    <string name="print_hello_world">Let us look at a simple code that will print the words <b> Hello World </b>.</string>
+    <string name="example_1">Example</string>
+    <string name="example_1_des">public class MyFirstJavaProgram {\n
+
+   /* This is my first java program. \n
+    * This will print \'Hello World\' as the output\n
+    */\n
+
+   public static void main(String [ ]args) {\n
+      System.out.println("Hello World"); // prints Hello World\n
+   }
+}
+    </string>
 
 </resources>

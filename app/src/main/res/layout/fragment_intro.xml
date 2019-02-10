@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhiteTransparent"
+    tools:context=".IntroFragment">
+
+   <LinearLayout
+       android:id="@+id/intro_title"
+       android:padding="10dp"
+
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:layout_height="wrap_content">
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:background="@color/white">
+           <TextView
+               android:text="1.1 Introduction"
+               android:layout_gravity="center"
+               android:textStyle="bold"
+               android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+               android:textColor="@color/colorAccent"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+
+       </android.support.v7.widget.CardView>
+
+
+   </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/intro_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_title"
+        android:layout_above="@+id/nav_tutorial"
+        android:orientation="vertical">
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/intro_scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_1"
+                    android:paddingLeft="8dp"
+
+                    android:paddingTop="8dp"
+                    android:gravity="left"
+
+                    android:text="@string/java_is_a_high_level_programming_language_originally_developed_by_sun_microsystems_and_released_in_1995_java_runs_on_a_variety_of_platforms_such_as_windows_mac_os_and_the_various_versions_of_unix_this_tutorial_gives_a_complete_understanding_of_java_this_reference_will_take_you_through_simple_and_practical_approaches_while_learning_java_programming_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:fontFamily="sans-serif"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
+
+
+
+                    <TextView
+                        android:id="@+id/text_2"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorAccent"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/text_1"
+
+                        android:text="@string/audience"/>
+
+                        <TextView
+                            android:id="@+id/text_3"
+                            android:gravity="left"
+                            android:layout_marginTop="7dp"
+                            android:paddingLeft="8dp"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_2"
+
+                            android:text="@string/this_tutorial_has_been_prepared_for_the_beginners_to_help_them_understand_the_basic_to_advanced_concepts_related_to_java_programming_language"/>
+
+                        <TextView
+                            android:id="@+id/text_4"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:textColor="@color/colorAccent"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/text_3"
+
+                            android:text="@string/prerequisites"/>
+
+                        <TextView
+                            android:id="@+id/text_5"
+                            android:gravity="left"
+                            android:layout_marginTop="7dp"
+                            android:paddingLeft="8dp"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_4"
+
+                            android:text="Before you start practicing various types of examples given in this reference, we assume that you are already aware about computer programs and computer programming languages."/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:id="@+id/nav_tutorial"
+
+
+
+        android:layout_height="56dp"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/nav_items_color"
+        app:itemTextColor="@color/nav_items_color"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        app:menu="@menu/tutorial_items" />
+
+
+</RelativeLayout>
