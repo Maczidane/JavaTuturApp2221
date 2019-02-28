@@ -49,11 +49,12 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable(){
-        Question q1 = new Question("A is correct","A","B","C","D",1);
-        Question q2 = new Question("B is correct","A","B","C","D",2);
-        Question q3 = new Question("D is correct","A","B","C","D",4);
-        Question q4 = new Question("C is correct","A","B","C","D",3);
-        Question q5 = new Question("A is correct","A","B","C","D",1);
+        Question q1 = new Question("Which version of Java introduced annotation?","Java 5","Java 6","Java 7","Java 8",1);
+        Question q2 = new Question(" What is the range of short data type in Java?","-128 to 127","-32768 to 32767","-2147483648 to 2147483647","None of the mentioned",2);
+        Question q3 = new Question("Which of these can be returned by the operator &?","Integer","Boolean","Character","Integer or Boolean",4);
+        Question q4 = new Question("Which of these can not be used for a variable name in Java?","identifier","keyword","identifier & keyword","none of the mentioned",2);
+        Question q5 = new Question("Which of these is an incorrect string literal?","“Hello World”","“Hello\\nWorld”","“\\”Hello World\\””","\"Hello\n" +
+                "  world\"",4);
         addQuestion(q1);
         addQuestion(q2);
         addQuestion(q3);

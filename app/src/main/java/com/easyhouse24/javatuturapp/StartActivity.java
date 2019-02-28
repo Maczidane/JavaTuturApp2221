@@ -99,9 +99,47 @@ public class StartActivity extends AppCompatActivity {
         cardViewAdvanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                i.putExtra("Fragment", "Advanced");
-                startActivity(i);
+
+                String prefAdvanced = getSharedPreferences("IS_ACCEPTED",MODE_PRIVATE).getString("X_NUMBER",null);
+
+
+                if (prefAdvanced != null)
+                {
+                    int pref = Integer.valueOf(prefAdvanced);
+                    if (pref >= 4)
+                    {
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        i.putExtra("Fragment", "Advanced");
+                        startActivity(i);
+                    }
+                    else{
+
+                      if (pref == 1)
+                        {
+                            setAlertAdvancedUnlock("You have completed only the Introduction of Java tutorials. You're present knowledge is not enough to go to the Advanced section. Please read more tutorials under Basic to unlock this section ");
+                        }
+                        else if (pref == 2)
+                        {
+                            setAlertAdvancedUnlock("You have completed only the Basic Syntax and below of Java tutorials . You're present knowledge is not enough to go to the Advanced section. Please read more tutorials under Basic to unlock this section ");
+
+                        }
+                        else if (pref == 3)
+                        {
+                            setAlertAdvancedUnlock("You have completed only the Variable Types and below of Java tutorials. You're present knowledge is not enough to go to the Advanced section. Please read more tutorials under Basic to unlock this section ");
+
+                        }
+                        else{
+                            setAlertAdvancedUnlock("You have completed only the Basic Data Types and below of Java tutorials. You're present knowledge is not enough to go to the Advanced section. Please read more tutorials under Basic to unlock this section ");
+
+                        }
+
+                    }
+                }
+
+                else{
+                    setAlertAdvancedUnlock("This section is locked because you have not read any of the tutorials under basic thus can't go to advanced section since it is the continuation of the Basic section and may lead to confusion. Please read the Basic section to unlock advanced section.");
+                }
+
             }
         });
         cardViewShare.setOnClickListener(new View.OnClickListener() {
@@ -121,20 +159,6 @@ public class StartActivity extends AppCompatActivity {
         });
 
 
-        // creating an object of soundPool
-        mSoundPool = new SoundPool(NR_OF_SIMULTANEOUS_SOUNDS, AudioManager.STREAM_MUSIC, 0);
-
-        mpool = new SoundPool(7, AudioManager.STREAM_MUSIC, 0);
-
-        // TODO: Load and get the IDs to identify the sounds
-
-        mClock = mSoundPool.load(getApplicationContext(), R.raw.clicky, 1);
-
-        //making a static variable to use in another class or activity
-        mclock2 = mpool.load(getApplicationContext(), R.raw.clicky, 1);
-
-        //Play the click
-        //mSoundPool.play(mClock,LEFT_VOLUME,RIGHT_VOLUME,PRIORITY,NO_LOOP,NORMAL_PLAY_RATE);
     }
 
 
@@ -166,6 +190,25 @@ public class StartActivity extends AppCompatActivity {
             mpool.play(mclock2, 1.0f, 1.0f, 0, 0, 1.0f);
         }
 
+    }
+
+    public void setAlertAdvancedUnlock(String message)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setPositiveButton("Goto Basic Tutorials", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                i.putExtra("Fragment", "Basic");
+
+                startActivity(i);
+            }
+        });
+        builder.setNegativeButton("Goto Main Menu",null);
+
+        builder.setIcon(R.drawable.ic_error_outline_black_24dp);
+        builder.show();
     }
 
     public void progressBar(){

@@ -107,10 +107,297 @@
     * This will print \'Hello World\' as the output\n
     */\n
 
-   public static void main(String [ ]args) {\n
+  \t public static void main(String [ ]args) {\n
       System.out.println("Hello World"); // prints Hello World\n
    }
 }
     </string>
+    <string name="date_1">Java provides the Date class available in java.util package, this class encapsulates the current date and time. The Date class supports two constructors as shown below: \n <b> 1) Date( )</b> \n This constructor initializes the object with the current date and time. \n\n <b> 2) Date(long millisec)</b> \n</string>
+    <string name="date_2">Following are the methods of the date class: \n <b> 1) boolean after(Date date)</b> \n Returns true if the invoking Date object contains a date that is later than the one specified by date, otherwise, it returns false. \n\n <b> 2) boolean before(Date date)</b> \n Returns true if the invoking Date object contains a date that is earlier than the one specified by date, otherwise, it returns false. \n\n <b> 3) Object clone( ) </b> \n Duplicates the invoking Date object. \n\n <b> 4) int compareTo(Date date)</b> \n Compares the value of the invoking object with that of date. Returns 0 if the values are equal. Returns a negative value if the invoking object is earlier than date. Returns a positive value if the invoking object is later than date.\n\n</string>
+    <string name="date_3"><b> 5) int compareTo(Object obj)</b> \n Operates identically to compareTo(Date) if obj is of class Date. Otherwise, it throws a ClassCastException. \n\n <b> 6) boolean equals(Object date)</b> \n Returns true if the invoking Date object contains the same time and date as the one specified by date, otherwise, it returns false.\n\n <b> 7) long getTime( )</b> \n Returns the number of milliseconds that have elapsed since January 1, 1970. \n\n <b> 8) int hashCode( )</b>  \n Returns a hash code for the invoking object. \n\n <b> 9) void setTime(long time)</b> \n Sets the time and date as specified by time, which represents an elapsed time in milliseconds from midnight, January 1, 1970. \n\n <b> 10) String toString( )</b> \n Converts the invoking Date object into a string and returns the result. \n\n  </string>
+    <string name="date_4">Getting Current Date and Time</string>
+    <string name="date_5">This is a very easy method to get current date and time in Java. You can use a simple Date object with toString() method to print the current date and time as follows −</string>
+    <string name="date_6">import java.util.Date;\n
+public class DateDemo {\n
+
+  \t public static void main(String args[ ]) { \n
+      \t // Instantiate a Date object \n
+      \t Date date = new Date(); \n \n
+
+      \t // display time and date using toString() \n
+      \t System.out.println(date.toString()); \n
+   }
+        \n
+}
+    </string>
+    <string name="date_7">This will produce the following result − \n\n <b>Output</b> \n</string>
+    <string name="date_8">on May 04 09:51:52 CDT 2009</string>
+    <string name="date_9">Date Formatting Using SimpleDateFormat</string>
+    <string name="date_10">SimpleDateFormat is a concrete class for formatting and parsing dates in a locale-sensitive manner. SimpleDateFormat allows you to start by choosing any user-defined patterns for date-time formatting. \n\n\n <b>Example </b> \n</string>
+    <string name="date_11">import java.util.*;\n
+import java.text.*;\n
+
+public class DateDemo {\n
+
+  \t public static void main(String args[]) { \n
+     \t Date dNow = new Date( ); \n
+        \t SimpleDateFormat ft = new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz"); \n
+
+    \t  System.out.println("Current Date: " + ft.format(dNow)); \n
+ \t  } \n
+}
+    </string>
+    <string name="date_12">This will produce the following result − \n\n <b>Output</b>\n </string>
+    <string name="date_13">Current Date: Sun 2004.07.18 at 04:14:09 PM PDT</string>
+    <string name="date_14"><b>Simple DateFormat Format Codes</b> \n\n o specify the time format, use a time pattern string. In this pattern, all ASCII letters are reserved as pattern letters, which are defined as the following −  </string>
+    <string name="date_formatting_using_printf">Date Formatting Using printf  </string>
+    <string name="date_18">import java.util.Date;\n
+public class DateDemo {\n
+
+   \tpublic static void main(String args[ ]) {\n
+     \t // Instantiate a Date object\n
+     \t Date date = new Date();\n
+
+      \t // display time and date\n
+      \t String str = String.format("Current Date/Time : %tc", date );\n
+
+      \t System.out.printf(str);\n
+   }\n
+}
+
+    </string>
+    <string name="date_19">This will produce the following result − \n<b>Output</b> \n</string>
+    <string name="date_20">Current Date/Time : Sat Dec 15 16:37:57 MST 2012</string>
+    <string name="date_date">Date and time formatting can be done very easily using printf method. You use a two-letter format, starting with t and ending in one of the letters of the table as shown in the following code.\n<b>Example</b> \n</string>
+    <string name="date_22">Date and Time Conversion Characters</string>
+    <string name="date_26">There are other useful classes related to Date and time. For more details, you can refer to Java Standard documentation.</string>
+    <string name="results_so_far">Results so far</string>
+    <string name="variables_1">A variable provides us with named storage that our programs can manipulate. Each variable in Java has a specific type, which determines the size and layout of the variable\'s memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable. You must declare all variables before they can be used. \n\n Following is the basic form of a variable declaration − \n\n <b>Example \n</b></string>
+
+    <string name="variable_2">data type variable [ = value][, variable [ = value] ...] ;</string>
+    <string name="variable_3">Here data type is one of Java\'s datatypes and variable is the name of the variable. To declare more than one variable of the specified type, you can use a comma-separated list. Following are valid examples of variable declaration and initialization in Java −</string>
+
+    <string name="variable_4">int a, b, c;         // Declares three ints, a, b, and c.\n
+int a = 10, b = 10;  // Example of initialization\n
+byte B = 22;         // initializes a byte type variable B.\n
+double pi = 3.14159; // declares and assigns a value of PI.\n
+char a = \'a\';        // the char variable a iis initialized with value \'a\'\n</string>
+    <string name="variable_5">This chapter will explain various variable types available in Java Language. There are three kinds of variables in Java −  \n\n -Local variables\n - Instance variables\n - Class/Static variables</string>
+    <string name="variable_6">Local Variables</string>
+    <string name="variable_7"> \n - Local variables are declared in methods, constructors, or blocks. \n\n - Local variables are created when the method, constructor or block is entered and the variable will be destroyed once it exits the method, constructor, or block. \n\n - Access modifiers cannot be used for local variables.\n\n -  Local variables are visible only within the declared method, constructor, or block. Local variables are implemented at stack level internally.\n\n -  There is no default value for local variables, so local variables should be declared and an initial value should be assigned before the first use.\n\n <b> Example</b> \n\n
+Here, age is a local variable. This is defined inside pupAge() method and its scope is limited to only this method. \n</string>
+
+    <string name="variable_8">public class Test {\n
+   \tpublic void pupAge() {\n
+      \tint age = 0;\n
+     \t age = age + 7;\n
+      \t System.out.println("Puppy age is : " + age);\n
+   \t}\n\n
+
+  \t public static void main(String args[]) {\n
+     \t Test test = new Test();\n
+      \ttest.pupAge();\n
+   }
+}</string>
+    <string name="variable_9">This will produce the following result − \n <b>Output</b>\n</string>
+    <string name="variable_10">Puppy age is: 7</string>
+    <string name="variable_11">Instance Variables</string>
+    <string name="variable_12">\n - Instance variables are declared in a class, but outside a method, constructor or any block. When a space is allocated for an object in the heap, a slot for each instance variable value is created. \n - Instance variables are created when an object is created with the use of the keyword \'new\' and destroyed when the object is destroyed. \n - Instance variables hold values that must be referenced by more than one method, constructor or block, or essential parts of an object\'s state that must be present throughout the class. \n - Instance variables can be declared in class level before or after use. \n - Access modifiers can be given for instance variables.\n - The instance variables are visible for all methods, constructors and block in the class.\n - Normally, it is recommended to make these variables private (access level). However, visibility for subclasses can be given for these variables with the use of access modifiers. \n - Instance variables have default values. For numbers, the default value is 0, for Booleans it is false, and for object references it is null. \n -  Values can be assigned during the declaration or within the constructor. \n - Instance variables can be accessed directly by calling the variable name inside the class. However, within static methods (when instance variables are given accessibility), they should be called using the fully qualified name. ObjectReference.VariableName.\n\
+    \n <b>Example</b> \n</string>
+    <string name="variable_13">\nimport java.io.*;\n
+\tpublic class Employee {\n
+
+   \t// this instance variable is visible for any child class.\n
+   public String name;\n
+
+   \t// salary  variable is visible in Employee class only.\n
+   private double salary;\n
+
+   \t// The name variable is assigned in the constructor.\n
+   public Employee (String empName) {\n
+      \tname = empName;\n
+   }
+
+  \t // The salary variable is assigned a value.\n
+   public void setSalary(double empSal) {\n
+      \tsalary = empSal;\n
+   }
+
+   \t// This method prints the employee details.\n
+   \tpublic void printEmp() {\n
+      \tSystem.out.println("name  : " + name );\n
+      \tSystem.out.println("salary :" + salary);\n
+   }
+
+   \tpublic static void main(String args[]) {\n
+      \tEmployee empOne = new Employee("Ransika");\n
+      \tempOne.setSalary(1000);\n
+      \tempOne.printEmp();\n
+   }
+}</string>
+    <string name="variable_14">This will produce the following result − \n\n <b>Output</b> \n</string>
+    <string name="variable_15">name  : Ransika\n
+salary :1000.0\n</string>
+    <string name="variable_16">Class/Static Variables</string>
+    <string name="variable_17">\n - Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.
+
+\n - There would only be one copy of each class variable per class, regardless of how many objects are created from it.
+
+\n - Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final, and static. Constant variables never change from their initial value.
+
+\n - Static variables are stored in the static memory. It is rare to use static variables other than declared final and used as either public or private constants.
+
+\n - Static variables are created when the program starts and destroyed when the program stops.
+
+\n - Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.
+
+\n - Default values are same as instance variables. For numbers, the default value is 0; for Booleans, it is false; and for object references, it is null. Values can be assigned during the declaration or within the constructor. Additionally, values can be assigned in special static initializer blocks.
+
+\n - Static variables can be accessed by calling with the class name ClassName.VariableName.
+
+\n - When declaring class variables as public static final, then variable names (constants) are all in upper case. If the static variables are not public and final, the naming syntax is the same as instance and local variables.</string>
+    <string name="variable_18">import java.io.*;\n
+\t public class Employee {\n
+
+   // salary  variable is a private static variable\n
+   \tprivate static double salary;\n
+
+   // DEPARTMENT is a constant\n
+   \tpublic static final String DEPARTMENT = "Development ";\n
+
+   \tpublic static void main(String args[]) {\n
+      \tsalary = 1000;\n
+      \tSystem.out.println(DEPARTMENT + "average salary:" + salary);\n
+   }
+}</string>
+    <string name="variable_19">This will produce the following result − \n\n  <b>Output</b> \n\n</string>
+    <string name="variable_20">Development average salary:1000\\n</string>
+    <string name="variable_22"><b>Note</b> − If the variables are accessed from an outside class, the constant should be accessed as Employee.DEPARTMENT\n\n</string>
+    <string name="types_1">Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in the memory. \n\nBased on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to variables, you can store integers, decimals, or characters in these variables.\n\n There are two data types available in Java :\n\n - Primitive Data Types\n\n - Reference/Object Data Types</string>
+    <string name="type_2">Primitive Data Types</string>
+    <string name="type_4"><b>short</b>\n\n - Short data type is a 16-bit signed two\'s complement integer\n  - Minimum value is -32,768 (-2^15) \n - Maximum value is 32,767 (inclusive) (2^15 -1)\n
+
+ - Short data type can also be used to save memory as byte data type. A short is 2 times smaller than an integer\n
+
+ - Default value is 0. \n
+
+ - Example: short s = 10000, short r = -20000\n</string>
+    <string name="type_5"><b>long</b>\n\n - Long data type is a 64-bit signed two\'s complement integer\n
+- Minimum value is -9,223,372,036,854,775,808(-2^63)\n
+- Maximum value is 9,223,372,036,854,775,807 (inclusive)(2^63 -1)\n
+- This type is used when a wider range than int is needed\n - Default value is 0L\n
+ - Example: long a = 100000L, long b = -200000L\n\n</string>
+    <string name="type_6"><b>float</b>\n\n
+- Float data type is a single-precision 32-bit IEEE 754 floating point\n
+
+- Float is mainly used to save memory in large arrays of floating point numbers\n
+
+- Default value is 0.0f\n
+
+- Float data type is never used for precise values such as currency\n
+
+- Example: float f1 = 234.5f\n\n</string>
+    <string name="type_7"><b>double</b>\n\n
+- double data type is a double-precision 64-bit IEEE 754 floating point\n
+
+- This data type is generally used as the default data type for decimal values, generally the default choice\n
+
+- Double data type should never be used for precise values such as currency\n
+
+- Default value is 0.0d\n
+
+- Example: double d1 = 123.4\n</string>
+    <string name="type_8"><b>boolean</b>\n\n
+- boolean data type represents one bit of information\n
+- There are only two possible values: true and false\n
+- This data type is used for simple flags that track true/false conditions\n
+- Default value is false\n
+- Example: boolean one = true\n\n
+
+<b>char</b>\n\n
+- char data type is a single 16-bit Unicode character\n
+- Minimum value is \'\u0000\' (or 0)\n
+- Maximum value is \'\uffff\' (or 65,535 inclusive)\n
+- Char data type is used to store any character\n
+- Example: char letterA = \'A\'\n\n</string>
+    <string name="type_11"> - Reference variables are created using defined constructors of the classes. They are used to access objects. These variables are declared to be of a specific type that cannot be changed. For example, Employee, Puppy, etc.\n
+
+- Class objects and various type of array variables come under reference datatype.\n
+
+- Default value of any reference variable is null.\n
+
+- A reference variable can be used to refer any object of the declared type or any compatible type.\n
+
+- Example: Animal animal = new Animal("giraffe");\n\n</string>
+
+    <string name="type_3">There are eight primitive datatypes supported by Java. Primitive datatypes are predefined by the language and named by a keyword. Let us now look into the eight primitive data types in detail.\n\n <b>byte</b> \n\n - Byte data type is an 8-bit signed two\'s complement integer \n\n -  Minimum value is -128 (-2^7) \n\n - Maximum value is 127 (inclusive)(2^7 -1) \n\n - Default value is 0 \n\n - Byte data type is used to save space in large arrays, mainly in place of integers, since a byte is four times smaller than an integer. \n\n - Example: byte a = 100, byte b = -50</string>
+    <string name="type_9">Reference Datatypes</string>
+    <string name="type_12">Java Literals</string>
+    <string name="type_13">A literal is a source code representation of a fixed value. They are represented directly in the code without any computation.\n\n Literals can be assigned to any primitive type variable. For example − \n\n</string>
+    <string name="type_14">byte a = 68;\n  char a = \'A\';\n</string>
+    <string name="type_15">byte, int, long, and short can be expressed in decimal(base 10), hexadecimal(base 16) or octal(base 8) number systems as well.\n\n Prefix 0 is used to indicate octal, and prefix 0x indicates hexadecimal when using these number systems for literals. For example −\n\n</string>
+    <string name="type_16">int decimal = 100;\n  int octal = 0144;\n  int hexa = 0x64;\n</string>
+    <string name="type_18">\"Hello World\"\n
+\"two\\nlines\"\n
+\"\\"This is in quotes\\"\"\n</string>
+    <string name="type_20">char a = \'\\u0001\';\n
+String a = \"\\u0001\"\n;</string>
+    <string name="type_17">String literals in Java are specified like they are in most other languages by enclosing a sequence of characters between a pair of double quotes. Examples of string literals are − \n\n <b>Example</b>\n\n</string>
+    <string name="type_19">String and char types of literals can contain any Unicode characters. For example −\n</string>
+    <string name="number_6">public class Test {\n
+
+   public static void main(String args[]) {\n
+      Integer x = 5; // boxes int to an Integer object\n
+      x =  x + 10;   // unboxes the Integer to a int\n
+      System.out.println(x); \n
+   }
+}</string>
+    <string name="type_22">Java language supports few special escape sequences for String and char literals as well. They are −</string>
+    <string name="number_1">Normally, when we work with Numbers, we use primitive data types such as byte, int, long, double, etc.\n\n <b>Example</b>\n\n</string>
+    <string name="number_2">int i = 5000;\n float gpa = 13.65;\n double mask = 0xaf;\n</string>
+    <string name="number_3">However, in development, we come across situations where we need to use objects instead of primitive data types. In order to achieve this, Java provides <b>wrapper classes</b>.\n\n All the wrapper classes (Integer, Long, Byte, Double, Float, Short) are subclasses of the abstract class Number.</string>
+    <string name="number_5">The object of the wrapper class contains or wraps its respective primitive data type. Converting primitive data types into object is called boxing, and this is taken care by the compiler. Therefore, while using a wrapper class you just need to pass the value of the primitive data type to the constructor of the Wrapper class.\n\n And the Wrapper object will be converted back to a primitive data type, and this process is called unboxing. The <b>Number</b> class is part of the java.lang package.\n\n Following is an example of boxing and unboxing − \n\n <b>Example</b></string>
+    <string name="number_7">This will produce the following result −\n\n <b>Output</b></string>
+    <string name="number_8">15</string>
+    <string name="number_9">When x is assigned an integer value, the compiler boxes the integer because x is integer object. Later, x is unboxed so that they can be added as an integer.</string>
+    <string name="number_11">Number Methods</string>
+    <string name="number_12">Following is the list of the instance methods that all the subclasses of the Number class implements − \n\n</string>
+    <string name="character_1">Normally, when we work with characters, we use primitive data types char.\n\n <b>Example</b>\n</string>
+    <string name="character_2">char ch = \'a\';\n
+
+// Unicode for uppercase Greek omega character\n
+char uniChar = \'\\u039A\'; \n
+
+// an array of chars\n
+char[] charArray ={ \'a\', \'b\', \'c\', \'d\', \'e\' };\n </string>
+    <string name="character_4">Character ch = new Character(\'a\');</string>
+    <string name="character_3">However in development, we come across situations where we need to use objects instead of primitive data types. In order to achieve this, Java provides wrapper class <b>Character</b> for primitive data type char.\n\n The Character class offers a number of useful class (i.e., static) methods for manipulating characters. You can create a Character object with the Character constructor − \n\n</string>
+    <string name="character_5">The Java compiler will also create a Character object for you under some circumstances. For example, if you pass a primitive char into a method that expects an object, the compiler automatically converts the char to a Character for you. This feature is called autoboxing or unboxing, if the conversion goes the other way. \n\n <b>Example</b>\n</string>
+    <string name="character_6">// Here following primitive char \'a\'\n
+// is boxed into the Character object ch\n
+Character ch = \'a\';\n
+
+// Here primitive \'x\' is boxed for method test,\n
+// return is unboxed to char \'c\'\n
+char c = test(\'x\');\n</string>
+    <string name="character_7">Escape Sequences</string>
+    <string name="character_8">A character preceded by a backslash (\\) is an escape sequence and has a special meaning to the compiler.\n\n The newline character (\\n ) has been used frequently in this tutorial in System.out.println() statements to advance to the next line after the string is printed.\n\n Following table shows the Java escape sequences − </string>
+    <string name="character_11">When an escape sequence is encountered in a print statement, the compiler interprets it accordingly.\n\n
+
+<b>Example</b> \n\n
+If you want to put quotes within quotes, you must use the escape sequence, \\", on the interior quotes − \n\n</string>
+
+    <string name="character_12">public class Test {\n
+
+   public static void main(String args[]) {\n
+      System.out.println(\"She said \\\"Hello!\\\" to me.\");\n
+   }
+}
+    </string>
+    <string name="character_13">This will produce the following result − \n\n <b>Output</b>\n</string>
+
+    <string name="character_14">She said \"Hello!\" to me.</string>
+    <string name="character_15">Character Methods</string>
+    <string name="character_16">Following is the list of the important instance methods that all the subclasses of the Character class implement −\n\n  </string>
 
 </resources>

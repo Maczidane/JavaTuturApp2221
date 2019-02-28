@@ -1,6 +1,8 @@
 package com.easyhouse24.javatuturapp;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -57,6 +59,12 @@ public class IntroFragment extends Fragment {
                switch (menuItem.getItemId())
                {
                    case R.id.tutorial_next:
+
+                       SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+
+                       SharedPreferences.Editor editor = pref.edit();
+                       editor.putString("X_NUMBER","1");
+                       editor.commit();
 
                        //This code is to replace a fragment with another fragment from a fragment
                        basicSyntaxFragment = new BasicSyntaxFragment();

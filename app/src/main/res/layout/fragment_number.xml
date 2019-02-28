@@ -6,7 +6,7 @@
     android:layout_marginTop="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhiteTransparent"
-    tools:context=".BasicSyntaxFragment">
+    tools:context=".NumberFragment">
 
     <LinearLayout
         android:id="@+id/intro_title"
@@ -15,12 +15,14 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
+
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white">
             <TextView
-                android:text="2.1 Basic Syntax"
+                android:text="5.1 Numbers"
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -62,7 +64,7 @@
                             android:paddingTop="8dp"
                             android:gravity="left"
 
-                            android:text="@string/basic_syntax_text_1"
+                            android:text="@string/number_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -77,15 +79,17 @@
                             android:id="@+id/text_2"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:background="@color/dim_gray"
+                            android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_below="@+id/text_1"
 
-                            android:text="@string/objects"/>
+                            android:text="@string/number_2"/>
 
                         <TextView
                             android:id="@+id/text_3"
@@ -101,21 +105,27 @@
 
                             android:layout_below="@+id/text_2"
 
-                            android:text="@string/object_des"/>
+                            android:text="@string/number_3"/>
 
-                        <TextView
+
+
+
+                        <ImageView
                             android:id="@+id/text_4"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:gravity="start"
+
+                            android:paddingStart="8dp"
+
+
+                            android:focusable="true"
+                            android:src="@drawable/number_1_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:layout_below="@+id/text_3"
 
-                            android:text="@string/class_1"/>
+                            android:layout_below="@+id/text_3"
+                            tools:ignore="RtlSymmetry" />
+
 
                         <TextView
                             android:id="@+id/text_5"
@@ -131,21 +141,23 @@
 
                             android:layout_below="@+id/text_4"
 
-                            android:text="@string/class_1_des"/>
+                            android:text="@string/number_5"/>
 
                         <TextView
                             android:id="@+id/text_6"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:background="@color/dim_gray"
+                            android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_below="@+id/text_5"
 
-                            android:text="@string/methods"/>
+                            android:text="@string/number_6"/>
 
                         <TextView
                             android:id="@+id/text_7"
@@ -161,21 +173,24 @@
 
                             android:layout_below="@+id/text_6"
 
-                            android:text="@string/method_des"/>
+                            android:text="@string/number_7"/>
+
 
                         <TextView
                             android:id="@+id/text_8"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:background="@color/dim_gray"
+                            android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_below="@+id/text_7"
 
-                            android:text="@string/variables"/>
+                            android:text="@string/number_8"/>
 
                         <TextView
                             android:id="@+id/text_9"
@@ -191,10 +206,10 @@
 
                             android:layout_below="@+id/text_8"
 
-                            android:text="@string/variables_des"/>
+                            android:text="@string/number_9"/>
 
                         <TextView
-                            android:id="@+id/text_10"
+                            android:id="@+id/text_11"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -205,62 +220,105 @@
                             android:textStyle="bold"
                             android:layout_below="@+id/text_9"
 
-                            android:text="@string/first_java_program"/>
+                            android:text="@string/number_11"/>
+
 
                         <TextView
-                            android:id="@+id/text_11"
+                            android:id="@+id/text_12"
                             android:gravity="left"
                             android:layout_marginTop="7dp"
                             android:paddingLeft="8dp"
                             android:fontFamily="sans-serif"
                             android:textSize="20sp"
+
                             android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:layout_below="@+id/text_10"
-
-                            android:text="@string/print_hello_world"/>
-
-                        <TextView
-                            android:id="@+id/text_12"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:textColor="@color/black"
-
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:layout_below="@+id/text_11"
 
-                            android:text="@string/example_1"/>
+                            android:text="@string/number_12"/>
 
 
 
-                        <TextView
+
+
+                        <ImageView
                             android:id="@+id/text_13"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:background="@color/dim_gray"
-                            android:textColor="@color/black"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+
+
+                            android:focusable="true"
+                            android:src="@drawable/number_2_images"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+
                             android:layout_below="@+id/text_12"
 
-                            android:text="@string/example_1_des"/>
+                            />
+
+                        <ImageView
+                            android:id="@+id/text_14"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+
+
+                            android:focusable="true"
+                            android:src="@drawable/number_3_image"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_13"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/text_15"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+
+
+                            android:focusable="true"
+                            android:src="@drawable/number_4_image"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_14"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/text_16"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+
+
+                            android:focusable="true"
+                            android:src="@drawable/number_5_image"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_15"
+
+                            />
+
+
 
                         <View
                             android:layout_below="@id/text_13"
                             android:layout_width="match_parent"
                             android:layout_marginTop="20dp"
-                            android:layout_height="40dp" />
+                            android:layout_height="70dp" />
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -274,7 +332,7 @@
 
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
-        android:id="@+id/nav_tutorial_basic_syntax"
+        android:id="@+id/nav_tutorial_numbers"
 
 
 

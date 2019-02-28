@@ -9,32 +9,26 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BasicSyntaxFragment extends Fragment {
-
-    private BasicSyntaxFragment basicSyntaxFragment;
-
-    private IntroFragment introFragment;
-
+public class VariablesFragment extends Fragment {
 
     private BottomNavigationView bottomNavigationView;
 
-    private VariablesFragment variablesFragment;
+    private DataTypesFragment dataTypesFragment;
+
+    private BasicSyntaxFragment basicSyntaxFragment;
 
 
-
-    public BasicSyntaxFragment() {
+    public VariablesFragment() {
         // Required empty public constructor
     }
 
@@ -43,9 +37,9 @@ public class BasicSyntaxFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view =  inflater.inflate(R.layout.fragment_basic_syntax, container, false);
+        View view =  inflater.inflate(R.layout.fragment_variables, container, false);
 
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_basic_syntax);
+        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_variables);
         bottomNavigationView.setSelectedItemId(R.id.tutorial_next);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -59,19 +53,19 @@ public class BasicSyntaxFragment extends Fragment {
                         SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
 
                         SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER","2");
+                        editor.putString("X_NUMBER","3");
                         editor.commit();
 
-                        variablesFragment = new VariablesFragment();
+                        dataTypesFragment = new DataTypesFragment();
                         final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, variablesFragment, "NewFragmentTag");
+                        ft1.replace(R.id.frame_tutorial, dataTypesFragment, "NewFragmentTag");
                         ft1.commit();
                         break;
 
                     case R.id.tutorial_back:
-                        introFragment = new IntroFragment();
+                        basicSyntaxFragment = new BasicSyntaxFragment();
                         final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.replace(R.id.frame_tutorial, introFragment, "NewFragmentTag");
+                        ft.replace(R.id.frame_tutorial, basicSyntaxFragment, "NewFragmentTag");
                         ft.commit();
                         break;
 
@@ -80,13 +74,7 @@ public class BasicSyntaxFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-
-       return view;
+        return view;
     }
 
 }

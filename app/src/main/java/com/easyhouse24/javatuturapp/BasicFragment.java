@@ -2,15 +2,20 @@ package com.easyhouse24.javatuturapp;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -43,17 +48,23 @@ public class BasicFragment extends Fragment {
     private TextView textView8;
     private TextView textViewIntro;
 
+    private ProgressBar progressBar;
+
+
 
     public BasicFragment() {
         // Required empty public constructor
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_basic, container, false);
+
+        progressBar = (ProgressBar) view.findViewById(R.id.progress_horizontal);
 
         mCardViewBasic_into = (CardView) view.findViewById(R.id.CardViewBasic_intro);
         mCardViewBasic_1 = (CardView) view.findViewById(R.id.CardViewBasic_1);
@@ -65,6 +76,7 @@ public class BasicFragment extends Fragment {
         mCardViewBasic_7 = (CardView) view.findViewById(R.id.CardViewBasic_7);
         mCardViewBasic_8 = (CardView) view.findViewById(R.id.CardViewBasic_8);
 
+
         textView1 = (TextView) view.findViewById(R.id.textViewBasic_1);
         textView2 = (TextView) view.findViewById(R.id.textViewBasic_2);
         textView3 = (TextView) view.findViewById(R.id.textViewBasic_3);
@@ -75,8 +87,88 @@ public class BasicFragment extends Fragment {
         textView8 = (TextView) view.findViewById(R.id.textViewBasic_8);
         textViewIntro = (TextView) view.findViewById(R.id.textViewBasic_intro);
 
+        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER",null);
 
-        mCardViewBasic_into.setOnClickListener(new View.OnClickListener() {
+        double x = 5.555555559;
+        double y = 2.444444445;
+        progressBar.setMax(100);
+        progressBar.setMin(0);
+
+        if (prefAdvanced != null) {
+            int pref = Integer.valueOf(prefAdvanced);
+            if (pref == 1)
+            {
+                int i = (int) x;
+                int z = (int) y;
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+
+            if (pref == 2)
+            {
+
+                int i = (int) (x*2);
+                int z = (int) (y*2);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 3)
+            {
+                int i = (int) (x*3);
+                int z = (int) (y*3);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 4)
+            {
+                int i = (int) (x*4);
+                int z = (int) (y*4);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 5)
+            {
+                int i = (int) (x*5);
+                int z = (int) (y*5);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 6)
+            {
+                int i = (int) (x*6);
+                int z = (int) (y*6);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 7)
+            {
+                int i = (int) (x*7);
+                int z = (int) (y*7);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 8)
+            {
+                int i = (int) (x*8);
+                int z = (int) (y*8);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+            if (pref == 9)
+            {
+                int i = (int) (x*9);
+                int z = (int) (y*9);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+            }
+
+
+
+        }
+
+
+
+            mCardViewBasic_into.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), TutorialActivity.class);
@@ -94,6 +186,111 @@ public class BasicFragment extends Fragment {
             }
         });
 
+        mCardViewBasic_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Basic Syntax");
+                startActivity(i);
+            }
+        });
+
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Basic Syntax");
+                startActivity(i);
+            }
+        });
+
+        mCardViewBasic_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Variables");
+                startActivity(i);
+            }
+        });
+
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Variables");
+                startActivity(i);
+            }
+        });
+
+        mCardViewBasic_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Data types");
+                startActivity(i);
+            }
+        });
+
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Data types");
+                startActivity(i);
+            }
+        });
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Numbers");
+                startActivity(i);
+            }
+        });
+        mCardViewBasic_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Numbers");
+                startActivity(i);
+            }
+        });
+
+        textView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Characters");
+                startActivity(i);
+            }
+        });
+
+        mCardViewBasic_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Characters");
+                startActivity(i);
+            }
+        });
+
+        textView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "String");
+                startActivity(i);
+            }
+        });
+
+        mCardViewBasic_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "String");
+                startActivity(i);
+            }
+        });
 
         return view;
     }

@@ -1,6 +1,9 @@
 package com.easyhouse24.javatuturapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +25,7 @@ import java.util.Collections;
 import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
+    public static final String EXTRA_SCORE = "extraScore";
     private Toolbar mToolbar;
 
     private TextView textViewQuestion;
@@ -344,6 +348,10 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
     public void finishQuiz(){
+        Intent resultIntent = new Intent();
+
+        resultIntent.putExtra(EXTRA_SCORE,score);
+        setResult(RESULT_OK,resultIntent);
         finish();
     }
 

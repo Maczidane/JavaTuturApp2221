@@ -6,24 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".TutorialActivity">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_tutorials"
-        android:layout_width="match_parent"
-        app:popupTheme="@style/AppThemeNo"
-        app:titleTextColor="@color/white"
-        android:background="@color/colorPrimary"
         style="@style/Base.Theme.AppCompat.Light.DarkActionBar"
-        android:layout_height="50dp" />
-
-
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppThemeNo"
+        app:titleTextColor="@color/white" />
 
     <FrameLayout
+
         android:id="@+id/frame_tutorial"
         android:layout_above="@id/main_nav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+
         >
 
     </FrameLayout>

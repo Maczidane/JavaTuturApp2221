@@ -13,8 +13,15 @@
         android:layout_height="fill_parent"
 
         android:orientation="vertical">
+        <ProgressBar android:layout_marginTop="10dp"
+            android:id="@+id/progress_horizontal"
+            android:layout_above="@id/cardLinear"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
 
         <LinearLayout
+            android:id="@+id/cardLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

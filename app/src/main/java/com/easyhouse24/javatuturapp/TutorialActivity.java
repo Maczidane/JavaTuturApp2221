@@ -16,6 +16,22 @@ public class TutorialActivity extends AppCompatActivity {
 
     private IntroFragment introFragment;
 
+    private BasicSyntaxFragment basicSyntaxFragment;
+
+    private DateFragment dateFragment;
+
+    private ObjectsFragment objectsFragment;
+
+    private VariablesFragment variablesFragment;
+
+    private DataTypesFragment dataTypesFragment;
+
+    private NumberFragment numberFragment;
+
+    private CharactersFragment charactersFragment;
+
+    private StringFragment stringFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +46,22 @@ public class TutorialActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         introFragment = new IntroFragment();
+        basicSyntaxFragment = new BasicSyntaxFragment();
+
+        dateFragment = new DateFragment();
+
+        numberFragment = new NumberFragment();
+
+        objectsFragment = new ObjectsFragment();
+
+        variablesFragment = new VariablesFragment();
+        dataTypesFragment = new DataTypesFragment();
+
+        charactersFragment = new CharactersFragment();
+
+        stringFragment = new StringFragment();
 
         //setFragment(introFragment);
-
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -44,14 +73,42 @@ public class TutorialActivity extends AppCompatActivity {
 
         Bundle s = getIntent().getExtras();
 
-        if (s!=null)
-        {
+        if (s != null) {
             String frag = s.getString("Fragment");
 
-            if (frag.equals("Introduction"))
-            {
-                setFragment(introFragment);
+            switch (frag) {
+                case "Introduction":
+                    setFragment(introFragment);
+                    break;
+                case "Basic Syntax":
+                    setFragment(basicSyntaxFragment);
+                    break;
+                case "Date":
+                    setFragment(dateFragment);
+                    break;
+                case "Objects":
+
+                    setFragment(objectsFragment);
+                    break;
+                case "Variables":
+                    setFragment(variablesFragment);
+                    break;
+                case "Data types":
+                    setFragment(dataTypesFragment);
+                    break;
+                case "Numbers":
+                    setFragment(numberFragment);
+                    break;
+                case "Characters":
+                    setFragment(charactersFragment);
+                    break;
+
+                case "String":
+                    setFragment(stringFragment);
+
+                    break;
             }
+
         }
     }
 
