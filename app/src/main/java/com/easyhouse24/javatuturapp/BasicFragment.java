@@ -10,6 +10,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -50,6 +51,15 @@ public class BasicFragment extends Fragment {
 
     private ProgressBar progressBar;
 
+    private CheckBox checkBox;
+    private CheckBox checkBox1;
+    private CheckBox checkBox2;
+    private CheckBox checkBox3;
+    private CheckBox checkBox4;
+    private CheckBox checkBox5;
+    private CheckBox checkBox6;
+    private CheckBox checkBox7;
+    private CheckBox checkBox8;
 
 
     public BasicFragment() {
@@ -76,6 +86,16 @@ public class BasicFragment extends Fragment {
         mCardViewBasic_7 = (CardView) view.findViewById(R.id.CardViewBasic_7);
         mCardViewBasic_8 = (CardView) view.findViewById(R.id.CardViewBasic_8);
 
+        checkBox = (CheckBox) view.findViewById(R.id.box_introduction);
+        checkBox1 = (CheckBox) view.findViewById(R.id.box_syntax);
+        checkBox2 = (CheckBox) view.findViewById(R.id.box_variables);
+        checkBox3 = (CheckBox) view.findViewById(R.id.box_basic_data);
+        checkBox4 = (CheckBox) view.findViewById(R.id.box_numbers);
+        checkBox5 = (CheckBox) view.findViewById(R.id.box_characters);
+        checkBox6 = (CheckBox) view.findViewById(R.id.box_strings);
+        checkBox7 = (CheckBox) view.findViewById(R.id.box_loops);
+        checkBox8 = (CheckBox) view.findViewById(R.id.box_arrays);
+
 
         textView1 = (TextView) view.findViewById(R.id.textViewBasic_1);
         textView2 = (TextView) view.findViewById(R.id.textViewBasic_2);
@@ -87,88 +107,222 @@ public class BasicFragment extends Fragment {
         textView8 = (TextView) view.findViewById(R.id.textViewBasic_8);
         textViewIntro = (TextView) view.findViewById(R.id.textViewBasic_intro);
 
-        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER",null);
+        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
         double x = 5.555555559;
         double y = 2.444444445;
         progressBar.setMax(100);
         progressBar.setMin(0);
 
+
         if (prefAdvanced != null) {
             int pref = Integer.valueOf(prefAdvanced);
-            if (pref == 1)
-            {
+            if (pref == 1) {
                 int i = (int) x;
                 int z = (int) y;
                 progressBar.incrementProgressBy(i);
                 progressBar.setSecondaryProgress(z);
+                checkBox.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox.setEnabled(false);
+
             }
 
-            if (pref == 2)
-            {
+            if (pref == 2) {
 
-                int i = (int) (x*2);
-                int z = (int) (y*2);
+                int i = (int) (x * 4);
+                int z = (int) (y * 4);
                 progressBar.incrementProgressBy(i);
                 progressBar.setSecondaryProgress(z);
+                //Checking the check box
+                checkBox.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox1.setEnabled(false);
             }
-            if (pref == 3)
-            {
-                int i = (int) (x*3);
-                int z = (int) (y*3);
+            if (pref == 3) {
+                int i = (int) (x * 6);
+                int z = (int) (y * 6);
                 progressBar.incrementProgressBy(i);
                 progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 4)
-            {
-                int i = (int) (x*4);
-                int z = (int) (y*4);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 5)
-            {
-                int i = (int) (x*5);
-                int z = (int) (y*5);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 6)
-            {
-                int i = (int) (x*6);
-                int z = (int) (y*6);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 7)
-            {
-                int i = (int) (x*7);
-                int z = (int) (y*7);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 8)
-            {
-                int i = (int) (x*8);
-                int z = (int) (y*8);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
-            if (pref == 9)
-            {
-                int i = (int) (x*9);
-                int z = (int) (y*9);
-                progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
-            }
 
+                checkBox.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+                //Disabling checkbox after being checked
+                checkBox2.setEnabled(false);
+            }
+            if (pref == 4) {
+                int i = (int) (x * 8);
+                int z = (int) (y * 8);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+            }
+            if (pref == 5) {
+                int i = (int) (x * 10);
+                int z = (int) (y * 10);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+            }
+            if (pref == 6) {
+                int i = (int) (x * 12);
+                int z = (int) (y * 12);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+                checkBox5.setChecked(true);
+
+                checkBox5.setEnabled(false);
+            }
+            if (pref == 7) {
+                int i = (int) (x * 14);
+                int z = (int) (y * 14);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+                checkBox5.setChecked(true);
+
+                checkBox5.setEnabled(false);
+                checkBox6.setChecked(true);
+
+                checkBox6.setEnabled(false);
+            }
+            if (pref == 8) {
+                int i = (int) (x * 16);
+                int z = (int) (y * 16);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+                checkBox5.setChecked(true);
+
+                checkBox5.setEnabled(false);
+                checkBox6.setChecked(true);
+
+                checkBox6.setEnabled(false);
+                checkBox7.setChecked(true);
+
+                checkBox7.setEnabled(false);
+            }
+            if (pref == 9) {
+                int i = (int) (x * 18);
+                int z = (int) (y * 18);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+                checkBox5.setChecked(true);
+
+                checkBox5.setEnabled(false);
+                checkBox6.setChecked(true);
+
+                checkBox6.setEnabled(false);
+                checkBox7.setChecked(true);
+
+                checkBox7.setEnabled(false);
+                checkBox8.setChecked(true);
+
+                checkBox8.setEnabled(false);
+            }
 
 
         }
 
 
-
-            mCardViewBasic_into.setOnClickListener(new View.OnClickListener() {
+        mCardViewBasic_into.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), TutorialActivity.class);

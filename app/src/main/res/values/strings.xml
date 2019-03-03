@@ -332,6 +332,7 @@ salary :1000.0\n</string>
 
     <string name="type_3">There are eight primitive datatypes supported by Java. Primitive datatypes are predefined by the language and named by a keyword. Let us now look into the eight primitive data types in detail.\n\n <b>byte</b> \n\n - Byte data type is an 8-bit signed two\'s complement integer \n\n -  Minimum value is -128 (-2^7) \n\n - Maximum value is 127 (inclusive)(2^7 -1) \n\n - Default value is 0 \n\n - Byte data type is used to save space in large arrays, mainly in place of integers, since a byte is four times smaller than an integer. \n\n - Example: byte a = 100, byte b = -50</string>
     <string name="type_9">Reference Datatypes</string>
+    <string name="textsize">25dp</string>
     <string name="type_12">Java Literals</string>
     <string name="type_13">A literal is a source code representation of a fixed value. They are represented directly in the code without any computation.\n\n Literals can be assigned to any primitive type variable. For example − \n\n</string>
     <string name="type_14">byte a = 68;\n  char a = \'A\';\n</string>

@@ -184,13 +184,6 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
-    // creating a class from which i can use or call in another activity ie sound pool class
-    public static class otherClass {
-        public void otherMethod() {
-            mpool.play(mclock2, 1.0f, 1.0f, 0, 0, 1.0f);
-        }
-
-    }
 
     public void setAlertAdvancedUnlock(String message)
     {

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -31,6 +32,8 @@ public class TutorialActivity extends AppCompatActivity {
     private CharactersFragment charactersFragment;
 
     private StringFragment stringFragment;
+
+    private BasicFragment basicFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +115,21 @@ public class TutorialActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // todo: goto back activity from here
+
+               basicFragment = new BasicFragment();
+               setFragment(basicFragment);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

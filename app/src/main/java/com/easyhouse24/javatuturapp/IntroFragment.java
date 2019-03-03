@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnScrollChangeListener;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class IntroFragment extends Fragment {
     private BasicSyntaxFragment basicSyntaxFragment;
 
     private FrameLayout frameLayout;
+
 
     private NestedScrollView nestedScrollView;
     private BottomNavigationView bottomNavigationView;
@@ -47,6 +49,8 @@ public class IntroFragment extends Fragment {
        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial);
 
        nestedScrollView = (NestedScrollView) view.findViewById(R.id.intro_scroll);
+
+
 
 
 
@@ -71,6 +75,8 @@ public class IntroFragment extends Fragment {
                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
                        ft.replace(R.id.frame_tutorial, basicSyntaxFragment, "NewFragmentTag");
                        ft.commit();
+
+
                        break;
                }
                return false;
