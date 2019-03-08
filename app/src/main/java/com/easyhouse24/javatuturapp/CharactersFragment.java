@@ -25,6 +25,7 @@ public class CharactersFragment extends Fragment {
 
     private NumberFragment numberFragment;
 
+    private StringFragment stringFragment;
 
     public CharactersFragment() {
         // Required empty public constructor
@@ -55,7 +56,12 @@ public class CharactersFragment extends Fragment {
                         editor.putString("X_NUMBER","7");
                         editor.commit();
 
-                        Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                        stringFragment = new StringFragment();
+                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                        ft1.replace(R.id.frame_tutorial, stringFragment, "NewFragmentTag");
+                        ft1.commit();
+
+                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
                         break;
 
 

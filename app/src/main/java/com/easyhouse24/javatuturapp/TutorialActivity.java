@@ -35,6 +35,10 @@ public class TutorialActivity extends AppCompatActivity {
 
     private BasicFragment basicFragment;
 
+    private LoopsFragment loopsFragment;
+
+    private ArraysFragment arraysFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,10 @@ public class TutorialActivity extends AppCompatActivity {
         charactersFragment = new CharactersFragment();
 
         stringFragment = new StringFragment();
+
+        loopsFragment = new LoopsFragment();
+
+        arraysFragment = new ArraysFragment();
 
         //setFragment(introFragment);
 
@@ -109,6 +117,13 @@ public class TutorialActivity extends AppCompatActivity {
                 case "String":
                     setFragment(stringFragment);
 
+                    break;
+
+                case "Loops":
+                    setFragment(loopsFragment);
+                    break;
+                case "Arrays":
+                    setFragment(arraysFragment);
                     break;
             }
 

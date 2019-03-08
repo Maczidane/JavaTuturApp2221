@@ -353,6 +353,7 @@ String a = \"\\u0001\"\n;</string>
       System.out.println(x); \n
    }
 }</string>
+    <string name="turnOff1">TURN OFF</string>
     <string name="type_22">Java language supports few special escape sequences for String and char literals as well. They are −</string>
     <string name="number_1">Normally, when we work with Numbers, we use primitive data types such as byte, int, long, double, etc.\n\n <b>Example</b>\n\n</string>
     <string name="number_2">int i = 5000;\n float gpa = 13.65;\n double mask = 0xaf;\n</string>
@@ -400,5 +401,166 @@ If you want to put quotes within quotes, you must use the escape sequence, \\", 
     <string name="character_14">She said \"Hello!\" to me.</string>
     <string name="character_15">Character Methods</string>
     <string name="character_16">Following is the list of the important instance methods that all the subclasses of the Character class implement −\n\n  </string>
+    <string name="hint">Hint</string>
+    <string name="save">Save</string>
+    <string name="string_1">Strings, which are widely used in Java programming, are a sequence of characters. In Java programming language, strings are treated as objects.\n\n The Java platform provides the String class to create and manipulate strings.</string>
+    <string name="string_2">Creating Strings</string>
+    <string name="string_3">The most direct way to create a string is to write −</string>
+    <string name="string_4">String greeting = \"Hello world!\";</string>
+    <string name="string_5">Whenever it encounters a string literal in your code, the compiler creates a String object with its value in this case, \"Hello world!\'.\n\n
+
+As with any other object, you can create String objects by using the new keyword and a constructor. The String class has 11 constructors that allow you to provide the initial value of the string using different sources, such as an array of characters.\n\n
+
+<b>Example</b>\n</string>
+    <string name="string_6">public class StringDemo {
+
+   \tpublic static void main(String args[]) {\n
+      \tchar[] helloArray = { \'h\', \'e\', \'l\', \'l\', \'o\', \'.\' };\n
+      \tString helloString = new String(helloArray);\n
+      \tSystem.out.println( helloString );\n
+   }
+}</string>
+    <string name="string_7">This will produce the following result −\n\n
+
+<b>Output</b>\n</string>
+    <string name="string_8">hello.</string>
+    <string name="string_9"><b>Note</b> − The String class is immutable, so that once it is created a String object cannot be changed. If there is a necessity to make a lot of modifications to Strings of characters, then you should use String Buffer and String Builder Classes.\n</string>
+    <string name="string_10">String Length</string>
+    <string name="string_11">Methods used to obtain information about an object are known as <b>accessor methods</b>. One accessor method that you can use with strings is the length() method, which returns the number of characters contained in the string object.\n\n The following program is an example of <b>length()</b>, method String class.\n\n <b>Example</b>\n</string>
+    <string name="string_12">public class StringDemo {\n
+
+   \tpublic static void main(String args[]) {\n
+      \tString palindrome = \"Dot saw I was Tod\";\n
+      \tint len = palindrome.length();\n
+      \tSystem.out.println( \"String Length is : \" + len );\n
+   }
+}</string>
+    <string name="string_14">This will produce the following result −  <b>Output</b>\n\n</string>
+    <string name="string_15">String Length is : 17</string>
+    <string name="string_16">Concatenating Strings</string>
+    <string name="string_18">The String class includes a method for concatenating two strings − \n</string>
+    <string name="string_19">string1.concat(string2);</string>
+    <string name="string_20">This returns a new string that is string1 with string2 added to it at the end. You can also use the concat() method with string literals, as in −\n</string>
+    <string name="string_21">\"My name is \".concat(\"Zara\");</string>
+    <string name="string_22">Strings are more commonly concatenated with the + operator, as in −\n</string>
+    <string name="string_23">\"Hello,\" + \" world\" + \"!\"</string>
+    <string name="string_24">which results in − \n</string>
+    <string name="string_25">\"Hello, world!\"</string>
+    <string name="string_26">Creating Format Strings</string>
+    <string name="string_27">You have printf() and format() methods to print output with formatted numbers. The String class has an equivalent class method, format(), that returns a String object rather than a PrintStream object.\n\n  Using String\'s static format() method allows you to create a formatted string that you can reuse, as opposed to a one-time print statement. For example, instead of − \n  <b>Example</b>\n\n</string>
+    <string name="string_28">System.out.printf(\"The value of the float variable is \" +\n
+                 \t \"%f, while the value of the integer \" +\n
+                  \t \"variable is %d, and the string \" +\n
+                \t  \"is %s\", floatVar, intVar, stringVar);</string>
+    <string name="string_29">String Methods</string>
+    <string name="string_30">Here is the list of methods supported by String class − \n\n</string>
+    <string name="loop_1">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.\n\n Programming languages provide various control structures that allow for more complicated execution paths. \n\n A <b>loop</b> statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages −</string>
+    <string name="loop_3">Java programming language provides the following types of loop to handle looping requirements. Click the following links to check their detail.</string>
+    <string name="loop_5">Loop Control Statements</string>
+    <string name="loop_6">Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.\n\n Java supports the following control statements. Click the following links to check their detail.</string>
+    <string name="loop_8">Enhanced for loop in Java</string>
+    <string name="loop_9">As of Java 5, the enhanced for loop was introduced. This is mainly used to traverse collection of elements including arrays.\n\n <b>Syntax</b> \n\n Following is the syntax of enhanced for loop −\n</string>
+    <string name="loop_11">for(declaration : expression) {\n
+   \t // Statements\n
+}</string>
+    <string name="loop_12"><b>Declaration </b> \n\n− The newly declared block variable, is of a type compatible with the elements of the array you are accessing. The variable will be available within the for block and its value would be the same as the current array element.\n\n
+
+<b>Expression</b>\n\n − This evaluates to the array you need to loop through. The expression can be an array variable or method call that returns an array.\n</string>
+    <string name="loop_13"><b>Example</b>\n\n</string>
+    <string name="loop_14">public class Test {\n
+
+  \t public static void main(String args[]) {\n
+    \t  int [] numbers = {10, 20, 30, 40, 50};\n
+
+    \t  for(int x : numbers ) {\n
+      \t   System.out.print( x );\n
+     \t    System.out.print(",");\n
+      }\n
+      \t System.out.print("\n");\n
+    \t  String [] names = {"James", "Larry", "Tom", "Lacy"};\n
+
+     \t for( String name : names ) {\n
+      \t   System.out.print( name );\n
+        \t System.out.print(",");\n
+    \t  }
+   }</string>
+    <string name="loop_15">This will produce the following result −\n\n  <b>Output</b>\n\n</string>
+    <string name="loop_16">10, 20, 30, 40, 50,\n
+James, Larry, Tom, Lacy,</string>
+    <string name="array_1">Java provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.\n\n Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables.\n\n This tutorial introduces how to declare array variables, create arrays, and process arrays using indexed variables.</string>
+    <string name="arrays_2">Declaring Array Variables</string>
+    <string name="array_3">To use an array in a program, you must declare a variable to reference the array, and you must specify the type of array the variable can reference. Here is the syntax for declaring an array variable − \n\n  <b>Syntax</b> \n\n</string>
+    <string name="array_4">dataType[ ] arrayRefVar;   // preferred way.\n
+or\n
+dataType arrayRefVar[ ];  // works but not preferred way.\n</string>
+    <string name="array_5"><b>Note</b> − The style <b>dataType[] arrayRefVar</b> is preferred. The style <b>dataType arrayRefVar[]</b>  comes from the C/C++ language and was adopted in Java to accommodate C/C++ programmers.\n\n
+
+        <b>Example</b>\n\n
+The following code snippets are examples of this syntax − \n</string>
+    <string name="array_6">double[] myList;   // preferred way.\n
+or\n
+double myList[];   // works but not preferred way.\n</string>
+    <string name="array_7">Creating Arrays</string>
+    <string name="array_8">You can create an array by using the new operator with the following syntax − \n\n<b>Syntax</b> \n\n</string>
+    <string name="array_9">arrayRefVar = new dataType[arraySize];</string>
+    <string name="array_10">The above statement does two things −\n\n
+
+\t - It creates an array using new dataType[arraySize].\n\n
+
+\t - It assigns the reference of the newly created array to the variable arrayRefVar.\n\n
+
+Declaring an array variable, creating an array, and assigning the reference of the array to the variable can be combined in one statement, as shown below −</string>
+    <string name="array_11">dataType[] arrayRefVar = new dataType[arraySize];</string>
+    <string name="array_12">Alternatively you can create arrays as follows −</string>
+    <string name="array_13">dataType[] arrayRefVar = {value0, value1, ..., valuek};</string>
+    <string name="array_14">The array elements are accessed through the <b>index</b>. Array indices are 0-based; that is, they start from 0 to <b>arrayRefVar.length-1</b>.\n\n <b>Example</b>\n\n Following statement declares an array variable, myList, creates an array of 10 elements of double type and assigns its reference to myList −\n\n</string>
+    <string name="array_15">double[] myList = new double[10];</string>
+    <string name="array_16">Following picture represents array myList. Here, myList holds ten double values and the indices are from 0 to 9.</string>
+    <string name="array_18">Processing Arrays</string>
+    <string name="array_19">When processing array elements, we often use either for <b>loop</b> or <b>foreach</b> loop because all of the elements in an array are of the same type and the size of the array is known.\n\n <b>Example</b>\n\n Here is a complete example showing how to create, initialize, and process arrays −</string>
+    <string name="array_20"><![CDATA[public class TestArray {\n
+
+  \t public static void main(String[] args) {\n
+      \tdouble[] myList = {1.9, 2.9, 3.4, 3.5};\n
+
+     \t // Print all the array elements\n
+      \tfor (int i = 0; i < myList.length; i++) {\n
+         \tSystem.out.println(myList[i] + \" \");\n
+      }\n
+
+      \t// Summing all elements\n
+      \tdouble total = 0;\n
+      \tfor (int i = 0; i < myList.length; i++) {\n
+        \t total += myList[i];\n
+      \t}\n
+      \tSystem.out.println("Total is " + total);\n
+
+     \t // Finding the largest element\n
+      \tdouble max = myList[0];\n
+      \tfor (int i = 1; i < myList.length; i++) {\n
+        \t if (myList[i] > max) max = myList[i];\n
+     \t }\n
+      \tSystem.out.println(\"Max is \" + max); \n
+  \t }
+}]]></string>
+    <string name="array_21">This will produce the following result −\n\n <b>Output</b>\n</string>
+    <string name="array_22">1.9\n 2.9\n 3.4\n 3.5\n Total is 11.7\n Max is 3.5\n</string>
+    <string name="array_23">The foreach Loops</string>
+    <string name="array_24">JDK 1.5 introduced a new for loop known as foreach loop or enhanced for loop, which enables you to traverse the complete array sequentially without using an index variable.\n\n <b>Example</b>\n\n The following code displays all the elements in the array myList −</string>
+    <string name="array_25">public class TestArray {\n
+
+   \tpublic static void main(String[] args) {\n
+      \tdouble[] myList = {1.9, 2.9, 3.4, 3.5};\n
+
+      \t// Print all the array elements\n
+      \tfor (double element: myList) {\n
+         \tSystem.out.println(element);\n
+      \t}\n
+   }
+}</string>
+    <string name="array_26">This will produce the following result −\n\n <b>Output</b>\n\n</string>
+    <string name="array_27">1.9\n 2.9\n 3.4\n 3.5\n</string>
+    <string name="array_28">The Arrays Class</string>
+    <string name="array_29">The java.util.Arrays class contains various static methods for sorting and searching arrays, comparing arrays, and filling array elements. These methods are overloaded for all primitive types.</string>
 
 </resources>

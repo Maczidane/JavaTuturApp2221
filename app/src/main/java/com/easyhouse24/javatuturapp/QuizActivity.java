@@ -10,6 +10,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,8 @@ import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -85,6 +89,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private int score;
 
+    private CoordinatorLayout coordinatorLayout;
+
     private boolean answered;
 
 
@@ -143,6 +149,9 @@ public class QuizActivity extends AppCompatActivity {
                askQuit();
             }
         });
+
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                .coordinatorLayout);
 
         // We load a drawable and create a location to show a tap target here
         // We need the display to get the width and height at this point in time
@@ -204,13 +213,13 @@ public class QuizActivity extends AppCompatActivity {
 //                                .transparentTarget(true)
 //                                .textColor(android.R.color.black)
 //                                .id(1),
-                           /* // You can also target the overflow button in your toolbar
-                            TapTarget.forToolbarOverflow(toolbar, "This will show more options. ", "Save progress, help etc")
+                            // You can also target the overflow button in your toolbar
+                            TapTarget.forToolbarOverflow(mToolbar, "This will show more options. ", "Save progress, help etc")
                                     .outerCircleColor(R.color.red)
                                     .textColor(R.color.white)
                                     .cancelable(false)
                                     .tintTarget(true)
-                                    .id(1),*/
+                                    .id(1),
                             // This tap target will target our droid buddy at the given target rect
                             TapTarget.forBounds(droidTarget, "Tutorial Completed", "Now you are ready to get to the real part")
                                     .cancelable(true)
@@ -218,7 +227,7 @@ public class QuizActivity extends AppCompatActivity {
                                     .icon(droid)
                                     .tintTarget(true)
                                     .textColor(R.color.white)
-                                    .id(1)
+                                    .id(2)
                     )
                     .listener(new TapTargetSequence.Listener() {
                         // This listener will tell us when interesting(tm) events happen in regards
@@ -302,6 +311,16 @@ public class QuizActivity extends AppCompatActivity {
                         // to the sequence
                         @Override
                         public void onSequenceFinish() {
+                            startServiceOne();
+                            makeSnackBar(R.string.snackbar, R.string.turnOff1, R.string.background);
+
+                            // Handle count down timer
+                            if (mCountDownTimer == null) {
+                                mCountDownTimer.start();
+                            } else {
+                                mCountDownTimer.cancel();
+                                mCountDownTimer.start();
+                            }
                             sequence.start();
                         }
 
@@ -431,6 +450,50 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.quiz_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+
+        if (id == R.id.searchx) {
+            //handling button for turn music On / Off
+            final Boolean On_Off = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("On_Off", false);
+
+
+            if (!On_Off) {
+                stopServiceOne();
+                makeSnackbar1(R.string.background);
+                getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("On_Off", true).commit();
+            } else {
+                startServiceOne();
+                makeSnackbar2(R.string.snackbar);
+                getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("On_Off", false).commit();
+            }
+
+        }
+
+        //handling when back button pressed on toolbar.
+        // using android.R.id.home because this button was inserted using
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (id == android.R.id.home) {
+            //closing current activity
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public void NotifyUser() {
        Boolean QuizFirst = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("QuizFirst", true);
 
@@ -511,6 +574,7 @@ public class QuizActivity extends AppCompatActivity {
         builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                stopServiceOne();
                 finish();
             }
         }).show();
@@ -519,6 +583,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         askQuit();
+
     }
 
     private void startCountDown(){
@@ -616,6 +681,37 @@ public class QuizActivity extends AppCompatActivity {
         finish();
     }
 
+    public void makeSnackBar(int message, int turnOff, final int message2) {
+        startServiceOne();
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, message, Snackbar.LENGTH_LONG)
+                .setAction(turnOff, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        stopServiceOne();
+
+                        Snackbar snackbar1 = Snackbar.make(coordinatorLayout, message2, Snackbar.LENGTH_SHORT);
+
+                        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("On_Off", true).commit();
+
+                        //changing the collor of the text inside snack bar 1
+                        View sbView = snackbar1.getView();
+                        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                        textView.setTextColor(Color.RED);
+                        snackbar1.show();
+                    }
+
+                });
+
+        //changing the color of the text inside snack bar
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.GREEN);
+
+        snackbar.show();
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -623,6 +719,57 @@ public class QuizActivity extends AppCompatActivity {
         {
             mCountDownTimer.cancel();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        makeSnackBar(R.string.snackbar, R.string.turnOff1, R.string.background);
+
+    }
+
+    public void makeSnackbar1(int message) {
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, message, Snackbar.LENGTH_LONG);
+        //changing the collor of the text inside snack bar 1
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.RED);
+        snackbar.show();
+
+    }
+
+    public void makeSnackbar2(int message) {
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, message, Snackbar.LENGTH_LONG);
+        //changing the collor of the text inside snack bar 1
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.GREEN);
+        snackbar.show();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopServiceOne();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    // play background music from intent
+    public void startServiceOne() {
+        startService(new Intent(this, MusicService.class));
+    }
+
+    // stop background Music
+    public void stopServiceOne() {
+        stopService(new Intent(this, MusicService.class));
     }
 
     @Override

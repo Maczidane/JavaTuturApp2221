@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context="com.easyhouse24.myapplication.QuizActivity">
+    <item
+        android:id="@+id/action_hints"
+
+        android:orderInCategory="100"
+        android:title="@string/hint"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_help"
+
+        android:orderInCategory="100"
+        android:title="@string/save"
+        app:showAsAction="never" />
+    <item
+        android:title="Search"
+        android:id="@+id/searchx"
+
+        android:icon="@drawable/ic_queue_music_black_24dp"
+        app:showAsAction="always"
+
+        />
+
+
+</menu>

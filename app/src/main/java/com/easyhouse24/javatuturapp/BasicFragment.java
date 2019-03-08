@@ -313,9 +313,44 @@ public class BasicFragment extends Fragment {
                 checkBox7.setChecked(true);
 
                 checkBox7.setEnabled(false);
+
+            }
+
+            if (pref == 10) {
+                int i = (int) (x * 20);
+                int z = (int) (y * 20);
+                progressBar.incrementProgressBy(i);
+                progressBar.setSecondaryProgress(z);
+
+                checkBox.setChecked(true);
+
+                checkBox.setEnabled(false);
+                checkBox1.setChecked(true);
+
+                checkBox1.setEnabled(false);
+                checkBox2.setChecked(true);
+
+                checkBox2.setEnabled(false);
+                checkBox3.setChecked(true);
+
+                checkBox3.setEnabled(false);
+                checkBox4.setChecked(true);
+
+                checkBox4.setEnabled(false);
+                checkBox5.setChecked(true);
+
+                checkBox5.setEnabled(false);
+                checkBox6.setChecked(true);
+
+                checkBox6.setEnabled(false);
+                checkBox7.setChecked(true);
+
+                checkBox7.setEnabled(false);
                 checkBox8.setChecked(true);
 
                 checkBox8.setEnabled(false);
+
+
             }
 
 
@@ -442,6 +477,39 @@ public class BasicFragment extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), TutorialActivity.class);
                 i.putExtra("Fragment", "String");
+                startActivity(i);
+            }
+        });
+        mCardViewBasic_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Loops");
+                startActivity(i);
+            }
+        });
+        textView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Loops");
+                startActivity(i);
+            }
+        });
+
+        mCardViewBasic_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Arrays");
+                startActivity(i);
+            }
+        });
+        textView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), TutorialActivity.class);
+                i.putExtra("Fragment", "Arrays");
                 startActivity(i);
             }
         });
