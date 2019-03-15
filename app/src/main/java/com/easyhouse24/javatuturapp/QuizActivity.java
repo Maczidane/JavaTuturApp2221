@@ -395,13 +395,21 @@ public class QuizActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = new QuizDbHelper(this);
 
-            mQuestionList = dbHelper.getAllQuestion();
+            String prefDifficulty = getSharedPreferences("IS_DIFFICULTY",MODE_PRIVATE).getString("X_DIFFICULTY",null);
+            if (prefDifficulty != null) {
 
-            questionCountTotal = mQuestionList.size();
+                mQuestionList = dbHelper.getQuestion(prefDifficulty);
 
-            Collections.shuffle(mQuestionList);
+                questionCountTotal = mQuestionList.size();
 
-            NotifyUser();
+                Collections.shuffle(mQuestionList);
+
+                NotifyUser();
+            }
+            else{
+                Toast.makeText(getApplicationContext(),"No questions yet. Still to put questions",Toast.LENGTH_LONG).show();
+                finishQuiz();
+            }
         }
         else{
             mQuestionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
@@ -649,19 +657,19 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()){
             case 1:
                 mRadioButton1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 1 is correct");
+                textViewQuestion.setText(currentQuestion.getSolution());
                 break;
             case 2:
                 mRadioButton2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 2 is correct");
+                textViewQuestion.setText(currentQuestion.getSolution());
                 break;
             case 3:
                 mRadioButton3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 3 is correct");
+                textViewQuestion.setText(currentQuestion.getSolution());
                 break;
             case 4:
                 mRadioButton4.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 4 is correct");
+                textViewQuestion.setText(currentQuestion.getSolution());
                 break;
         }
 

@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -21,15 +20,16 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DataTypesFragment extends Fragment {
+public class DecisionFragment extends Fragment {
+
     private BottomNavigationView bottomNavigationView;
 
-    private VariablesFragment variablesFragment;
-    private NumberFragment   numberFragment;
+    private RegularFragment regularFragment;
+
+    private ModifiersFragment modifiersFragment;
 
 
-
-    public DataTypesFragment() {
+    public DecisionFragment() {
         // Required empty public constructor
     }
 
@@ -38,10 +38,10 @@ public class DataTypesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_data_types, container, false);
+        View view = inflater.inflate(R.layout.fragment_decision, container, false);
 
+        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_decision);
 
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_data_types);
         bottomNavigationView.setSelectedItemId(R.id.tutorial_next);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -51,37 +51,38 @@ public class DataTypesFragment extends Fragment {
                 switch (menuItem.getItemId())
                 {
                     case R.id.tutorial_next:
+
                         String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        if (prefAdvanced == null) {
+                        int pref1 = Integer.valueOf(prefAdvanced);
+                        if ( 15 > pref1) {
 
-                            Toast.makeText(getContext(), "Please read Introduction First", Toast.LENGTH_LONG).show();
-                            return false;
+                            SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
 
-                        } else {
-                            int pref1 = Integer.valueOf(prefAdvanced);
-                            if (5 > pref1) {
-                                SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
-
-                                SharedPreferences.Editor editor = pref.edit();
-                                editor.putString("X_NUMBER", "5");
-                                editor.commit();
-                            }
-
-                            numberFragment = new NumberFragment();
-                            final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                            ft1.replace(R.id.frame_tutorial, numberFragment, "NewFragmentTag");
-                            ft1.commit();
-                            break;
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("X_NUMBER", "15");
+                            editor.commit();
                         }
 
+                        regularFragment = new RegularFragment();
+                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.frame_tutorial, regularFragment, "NewFragmentTag");
+                        ft.commit();
+
+
+
+                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                        break;
 
                     case R.id.tutorial_back:
-                        variablesFragment = new VariablesFragment();
-                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.replace(R.id.frame_tutorial, variablesFragment, "NewFragmentTag");
-                        ft.commit();
+                        modifiersFragment = new ModifiersFragment();
+                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                        ft1.replace(R.id.frame_tutorial, modifiersFragment, "NewFragmentTag");
+                        ft1.commit();
                         break;
+
+
+
 
                 }
                 return false;

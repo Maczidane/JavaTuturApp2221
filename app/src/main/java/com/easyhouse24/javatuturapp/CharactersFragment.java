@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,20 +51,31 @@ public class CharactersFragment extends Fragment {
                 switch (menuItem.getItemId())
                 {
                     case R.id.tutorial_next:
+                        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+                        if (prefAdvanced == null) {
+                            Toast.makeText(getContext(), "Please read Introduction First", Toast.LENGTH_LONG).show();
+                            return false;
 
-                        SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER","7");
-                        editor.commit();
+                        } else {
+                            int pref1 = Integer.valueOf(prefAdvanced);
+                            if (7 > pref1) {
 
-                        stringFragment = new StringFragment();
-                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, stringFragment, "NewFragmentTag");
-                        ft1.commit();
+                                SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
 
-                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
-                        break;
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putString("X_NUMBER", "7");
+                                editor.commit();
+                            }
+
+                            stringFragment = new StringFragment();
+                            final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                            ft1.replace(R.id.frame_tutorial, stringFragment, "NewFragmentTag");
+                            ft1.commit();
+
+                            //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                            break;
+                        }
 
 
                     case  R.id.tutorial_back:

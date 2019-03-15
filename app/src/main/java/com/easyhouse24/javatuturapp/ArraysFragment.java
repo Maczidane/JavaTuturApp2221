@@ -16,6 +16,9 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -27,9 +30,7 @@ public class ArraysFragment extends Fragment {
 
     private LoopsFragment loopsFragment;
 
-    private AdvancedFragment advancedFragment;
 
-    private HomeFragment homeFragment;
 
 
     public ArraysFragment() {
@@ -53,18 +54,29 @@ public class ArraysFragment extends Fragment {
                 switch (menuItem.getItemId())
                 {
                     case R.id.tutorial_next:
+                        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+                        if (prefAdvanced == null) {
+                            Toast.makeText(getContext(), "Please read Introduction First", Toast.LENGTH_LONG).show();
+                            return false;
 
-                        SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER","10");
-                        editor.commit();
+                        } else {
+                            int pref1 = Integer.valueOf(prefAdvanced);
+                            if (10 > pref1) {
+
+                                SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putString("X_NUMBER", "10");
+                                editor.commit();
+                            }
 
 
-                        askChange();
+                            askChange();
 
-                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
-                        break;
+                            //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                            break;
+                        }
 
 
                     case  R.id.tutorial_back:

@@ -6,10 +6,26 @@ import android.os.Parcelable;
 public class Question implements Parcelable {
     private String question;
 
+    public static final String DIFFICULTY_SET1 = "set1";
+    public static final String DIFFICULTY_SET2 = "set2";
+    public static final String DIFFICULTY_SET3 = "set3";
+    public static final String DIFFICULTY_SET4 = "set4";
+    public static final String DIFFICULTY_SET5 = "set5";
+    public static final String DIFFICULTY_SET6 = "set6";
+    public static final String DIFFICULTY_SET7 = "set7";
+    public static final String DIFFICULTY_SET8 = "set8";
+    public static final String DIFFICULTY_SET9 = "set9";
+    public static final String SOLUTION = "solution";
+
+
+
     private String option1;
     private String option2;
     private String option3;
     private String option4;
+
+    private String difficulty;
+    private String solution;
 
     private int answerNr;
 
@@ -18,13 +34,15 @@ public class Question implements Parcelable {
 
     }
 
-    public Question(String question, String option1, String option2, String option3, String option4, int answerNr) {
+    public Question(String question, String option1, String option2, String option3, String option4, int answerNr,String difficulty,String solution) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.answerNr = answerNr;
+        this.difficulty = difficulty;
+        this.solution = solution;
     }
 
     protected Question(Parcel in) {
@@ -34,6 +52,8 @@ public class Question implements Parcelable {
         option3 = in.readString();
         option4 = in.readString();
         answerNr = in.readInt();
+        difficulty = in.readString();
+        solution = in.readString();
     }
 
     @Override
@@ -44,6 +64,8 @@ public class Question implements Parcelable {
         dest.writeString(option3);
         dest.writeString(option4);
         dest.writeInt(answerNr);
+        dest.writeString(difficulty);
+        dest.writeString(solution);
     }
 
     @Override
@@ -62,6 +84,22 @@ public class Question implements Parcelable {
             return new Question[size];
         }
     };
+
+    public String getSolution() {
+        return solution;
+    }
+
+    public void setSolution(String solution) {
+        this.solution = solution;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
 
     public String getQuestion() {
         return question;
@@ -109,5 +147,21 @@ public class Question implements Parcelable {
 
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    public static String[] getAllDifficultyLevels()
+    {
+        return  new  String[]{
+                DIFFICULTY_SET1,
+                DIFFICULTY_SET2,
+                DIFFICULTY_SET3,
+                DIFFICULTY_SET4,
+                DIFFICULTY_SET5,
+                DIFFICULTY_SET6,
+                DIFFICULTY_SET7,
+                DIFFICULTY_SET8,
+                DIFFICULTY_SET9
+        };
+
     }
 }

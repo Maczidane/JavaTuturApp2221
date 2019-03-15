@@ -1,7 +1,10 @@
 package com.easyhouse24.javatuturapp;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -20,16 +23,16 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ObjectsFragment extends Fragment {
+public class RegularFragment extends Fragment {
 
     private BottomNavigationView bottomNavigationView;
 
-    private ConstructorFragment constructorFragment;
-
-    private DateFragment dateFragment;
+    private DecisionFragment decisionFragment;
 
 
-    public ObjectsFragment() {
+
+
+    public RegularFragment() {
         // Required empty public constructor
     }
 
@@ -38,9 +41,8 @@ public class ObjectsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_objects, container, false);
-
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_objects);
+       View view = inflater.inflate(R.layout.fragment_regular, container, false);
+        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_regular);
 
         bottomNavigationView.setSelectedItemId(R.id.tutorial_next);
 
@@ -55,41 +57,61 @@ public class ObjectsFragment extends Fragment {
                         String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
                         int pref1 = Integer.valueOf(prefAdvanced);
-                        if ( 12 > pref1) {
+                        if ( 16 > pref1) {
 
                             SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
 
                             SharedPreferences.Editor editor = pref.edit();
-                            editor.putString("X_NUMBER", "12");
+                            editor.putString("X_NUMBER", "16");
                             editor.commit();
-
-                            constructorFragment = new ConstructorFragment();
-                            final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                            ft.replace(R.id.frame_tutorial, constructorFragment, "NewFragmentTag");
-                            ft.commit();
                         }
 
 
+                        askChange();
 
                         //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
                         break;
 
-                    case R.id.tutorial_back:
-                        dateFragment = new DateFragment();
-                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, dateFragment, "NewFragmentTag");
-                        ft1.commit();
+
+                    case  R.id.tutorial_back:
+                        decisionFragment = new DecisionFragment();
+                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.frame_tutorial, decisionFragment, "NewFragmentTag");
+                        ft.commit();
+
+
+
                         break;
-
-
-
-
                 }
                 return false;
             }
         });
 
         return view;
+    }
+
+    public void askChange(){
+        AlertDialog.Builder  builder = new AlertDialog.Builder(getContext());
+
+        builder.setCancelable(false);
+        builder.setMessage("Congratulations, you have finished the Advanced section Tutorials.You've been awarded a trophy. Move to : ");
+
+
+
+        builder.setPositiveButton("Stay here ",null);
+
+        builder.setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i = new Intent(getContext(),StartActivity.class);
+                startActivity(i);
+            }
+        });
+
+        builder.setIcon(R.drawable.ic_stars_black_24dp);
+
+        builder.show();
+
     }
 
 }

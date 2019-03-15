@@ -20,16 +20,16 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ObjectsFragment extends Fragment {
+public class ConstructorFragment extends Fragment {
 
     private BottomNavigationView bottomNavigationView;
 
-    private ConstructorFragment constructorFragment;
+    private ObjectsFragment objectsFragment;
 
-    private DateFragment dateFragment;
+    private ModifiersFragment modifiersFragment;
 
 
-    public ObjectsFragment() {
+    public ConstructorFragment() {
         // Required empty public constructor
     }
 
@@ -38,9 +38,8 @@ public class ObjectsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_objects, container, false);
-
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_objects);
+        View view = inflater.inflate(R.layout.fragment_constructor, container, false);
+        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.nav_tutorial_constructors);
 
         bottomNavigationView.setSelectedItemId(R.id.tutorial_next);
 
@@ -51,23 +50,22 @@ public class ObjectsFragment extends Fragment {
                 switch (menuItem.getItemId())
                 {
                     case R.id.tutorial_next:
-
                         String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
                         int pref1 = Integer.valueOf(prefAdvanced);
-                        if ( 12 > pref1) {
+                        if ( 13 > pref1) {
 
                             SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
 
                             SharedPreferences.Editor editor = pref.edit();
-                            editor.putString("X_NUMBER", "12");
+                            editor.putString("X_NUMBER", "13");
                             editor.commit();
-
-                            constructorFragment = new ConstructorFragment();
-                            final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                            ft.replace(R.id.frame_tutorial, constructorFragment, "NewFragmentTag");
-                            ft.commit();
                         }
+
+                        modifiersFragment = new ModifiersFragment();
+                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.frame_tutorial, modifiersFragment, "NewFragmentTag");
+                        ft.commit();
 
 
 
@@ -75,9 +73,9 @@ public class ObjectsFragment extends Fragment {
                         break;
 
                     case R.id.tutorial_back:
-                        dateFragment = new DateFragment();
+                        objectsFragment = new ObjectsFragment();
                         final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, dateFragment, "NewFragmentTag");
+                        ft1.replace(R.id.frame_tutorial, objectsFragment, "NewFragmentTag");
                         ft1.commit();
                         break;
 

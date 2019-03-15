@@ -13,10 +13,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progress_horizontal_advanced"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:freezesText="true"
+
+                android:indeterminate="false"
+                android:theme="@style/AppTheme" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
 
@@ -44,6 +56,13 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d" />
 
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_date"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
+
 
                 </android.support.v7.widget.CardView>
 
@@ -69,6 +88,12 @@
                         android:text="@string/basic_8"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d" />
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_objects"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
 
 
                 </android.support.v7.widget.CardView>
@@ -96,6 +121,12 @@
                         android:text="@string/basic_9"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d" />
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_constructors"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
 
 
                 </android.support.v7.widget.CardView>
@@ -124,6 +155,13 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d" />
 
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_modifiers"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
+
 
                 </android.support.v7.widget.CardView>
 
@@ -150,6 +188,13 @@
                         android:text="@string/basic_12"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_decision"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
 
 
                 </android.support.v7.widget.CardView>
@@ -184,6 +229,13 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#4d4d4d"
                         android:textFontWeight="1" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/box_regular"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:theme="@style/AppTheme" />
 
 
                 </android.support.v7.widget.CardView>

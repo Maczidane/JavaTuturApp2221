@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,12 +50,17 @@ public class DateFragment extends Fragment {
                 {
                     case R.id.tutorial_next:
                         objectsFragment = new ObjectsFragment();
+                        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+                        int pref1 = Integer.valueOf(prefAdvanced);
+                        if ( 11 > pref1) {
 
-                        SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER","10");
-                        editor.commit();
+                            SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("X_NUMBER", "11");
+                            editor.commit();
+                        }
 
                         final FragmentTransaction ft = getFragmentManager().beginTransaction();
                         ft.replace(R.id.frame_tutorial, objectsFragment, "NewFragmentTag");

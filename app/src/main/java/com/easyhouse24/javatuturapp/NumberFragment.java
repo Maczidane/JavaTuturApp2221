@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -48,17 +51,28 @@ public class NumberFragment extends Fragment {
 
                 switch (menuItem.getItemId()) {
                     case R.id.tutorial_next:
-                        SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+                        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER", "6");
-                        editor.commit();
+                        if (prefAdvanced == null) {
+                            Toast.makeText(getContext(), "Please read Introduction First", Toast.LENGTH_LONG).show();
+                            return false;
 
-                        charactersFragment = new CharactersFragment();
-                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, charactersFragment, "NewFragmentTag");
-                        ft1.commit();
-                        break;
+                        } else {
+                            int pref1 = Integer.valueOf(prefAdvanced);
+                            if (6 > pref1) {
+                                SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putString("X_NUMBER", "6");
+                                editor.commit();
+                            }
+
+                            charactersFragment = new CharactersFragment();
+                            final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                            ft1.replace(R.id.frame_tutorial, charactersFragment, "NewFragmentTag");
+                            ft1.commit();
+                            break;
+                        }
 
 
                     case R.id.tutorial_back:

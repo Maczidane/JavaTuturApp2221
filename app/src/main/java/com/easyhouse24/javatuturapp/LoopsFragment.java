@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -49,21 +52,32 @@ public class LoopsFragment extends Fragment {
                 switch (menuItem.getItemId())
                 {
                     case R.id.tutorial_next:
+                        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
-                        SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+                        if (prefAdvanced == null) {
+                            Toast.makeText(getContext(), "Please read Introduction First", Toast.LENGTH_LONG).show();
+                            return false;
 
-                        SharedPreferences.Editor editor = pref.edit();
-                        editor.putString("X_NUMBER","9");
-                        editor.commit();
+                        } else {
+                            int pref1 = Integer.valueOf(prefAdvanced);
+                            if (9 > pref1) {
+
+                                SharedPreferences pref = getActivity().getSharedPreferences("IS_ACCEPTED", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putString("X_NUMBER", "9");
+                                editor.commit();
+                            }
 
 
-                        arraysFragment = new ArraysFragment();
-                        final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
-                        ft1.replace(R.id.frame_tutorial, arraysFragment, "NewFragmentTag");
-                        ft1.commit();
+                            arraysFragment = new ArraysFragment();
+                            final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                            ft1.replace(R.id.frame_tutorial, arraysFragment, "NewFragmentTag");
+                            ft1.commit();
 
-                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
-                        break;
+                            //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                            break;
+                        }
 
 
                     case  R.id.tutorial_back:

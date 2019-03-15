@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -107,10 +108,10 @@ public class BasicFragment extends Fragment {
         textView8 = (TextView) view.findViewById(R.id.textViewBasic_8);
         textViewIntro = (TextView) view.findViewById(R.id.textViewBasic_intro);
 
-        String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
+        final String prefAdvanced = getActivity().getSharedPreferences("IS_ACCEPTED", MODE_PRIVATE).getString("X_NUMBER", null);
 
         double x = 5.555555559;
-        double y = 2.444444445;
+        double y = x + 2.444444445;
         progressBar.setMax(100);
         progressBar.setMin(0);
 
@@ -320,7 +321,7 @@ public class BasicFragment extends Fragment {
                 int i = (int) (x * 20);
                 int z = (int) (y * 20);
                 progressBar.incrementProgressBy(i);
-                progressBar.setSecondaryProgress(z);
+               // progressBar.setSecondaryProgress(z);
 
                 checkBox.setChecked(true);
 
@@ -369,9 +370,11 @@ public class BasicFragment extends Fragment {
         textViewIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), TutorialActivity.class);
-                i.putExtra("Fragment", "Introduction");
-                startActivity(i);
+
+                    Intent i = new Intent(getContext(), TutorialActivity.class);
+                    i.putExtra("Fragment", "Introduction");
+                    startActivity(i);
+
             }
         });
 

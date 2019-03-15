@@ -6,7 +6,7 @@
     android:layout_marginTop="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhiteTransparent"
-    tools:context=".ObjectsFragment">
+    tools:context=".RegularFragment">
 
     <LinearLayout
         android:id="@+id/intro_title"
@@ -22,7 +22,7 @@
             android:layout_height="50dp"
             android:background="@color/white">
             <TextView
-                android:text="11.1 Objects and Classes"
+                android:text="15.1 Regular Expressions"
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -64,7 +64,7 @@
                             android:paddingTop="8dp"
                             android:gravity="left"
 
-                            android:text="@string/objects_1"
+                            android:text="@string/regular_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -72,7 +72,6 @@
                             android:fontFamily="sans-serif"
                             android:textSize="20sp"
                             android:textColor="@color/black"/>
-
 
                         <TextView
                             android:id="@+id/text_2"
@@ -86,7 +85,9 @@
                             android:textStyle="bold"
                             android:layout_below="@+id/text_1"
 
-                            android:text="@string/objects_2"/>
+                            android:text="Capturing Groups"/>
+
+
 
 
 
@@ -104,21 +105,34 @@
 
                             android:layout_below="@+id/text_2"
 
-                            android:text="@string/objetcs_3"/>
+                            android:text="@string/regular_4"/>
 
                         <TextView
                             android:id="@+id/text_4"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:background="@color/dim_gray"
+                            android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_below="@+id/text_3"
 
-                            android:text="@string/objects_4"/>
+                            android:text="@string/regular_44"/>
+
+
+
+
+
+
+
+
+
+
+
 
                         <TextView
                             android:id="@+id/text_5"
@@ -134,7 +148,7 @@
 
                             android:layout_below="@+id/text_4"
 
-                            android:text="@string/objects_5"/>
+                            android:text="@string/regular_5"/>
 
                         <TextView
                             android:id="@+id/text_6"
@@ -150,30 +164,10 @@
                             android:textStyle="bold"
                             android:layout_below="@+id/text_5"
 
-                            android:text="@string/objects_6"/>
+                            android:text="@string/regular_6"/>
 
                         <TextView
                             android:id="@+id/text_7"
-                            android:gravity="left"
-                            android:layout_marginTop="7dp"
-                            android:paddingLeft="8dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:textColor="@color/black"
-
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:layout_below="@+id/text_6"
-
-                            android:text="@string/objects_7"/>
-
-
-
-
-
-                        <TextView
-                            android:id="@+id/text_8"
                             android:gravity="center"
                             android:layout_marginTop="10dp"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -182,62 +176,74 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
-                            android:layout_below="@+id/text_7"
+                            android:layout_below="@+id/text_6"
 
-                            android:text="@string/objects_8"/>
+                            android:text="Regular Expression Syntax"/>
 
 
                         <TextView
-                            android:id="@+id/text_9"
+                            android:id="@+id/text_8"
                             android:gravity="left"
                             android:layout_marginTop="7dp"
                             android:paddingLeft="8dp"
                             android:fontFamily="sans-serif"
                             android:textSize="20sp"
                             android:textColor="@color/black"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/text_7"
+
+                            android:text="@string/regular_8"/>
+                        <ImageView
+                            android:id="@+id/text_9"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_1_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_below="@+id/text_8"
 
-                            android:text="@string/objects_9"/>
-
-                        <TextView
+                            />
+                        <ImageView
                             android:id="@+id/text_10"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:background="@color/dim_gray"
-                            android:textColor="@color/black"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_2_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+
                             android:layout_below="@+id/text_9"
 
-                            android:text="@string/objects_10"/>
-
-
-
-                        <TextView
+                            />
+                        <ImageView
                             android:id="@+id/text_11"
                             android:gravity="left"
-                            android:layout_marginTop="7dp"
-                            android:paddingLeft="8dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
 
-                            android:textColor="@color/black"
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_3_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_below="@+id/text_10"
 
-                            android:text="@string/object_11"/>
-
+                            />
                         <TextView
                             android:id="@+id/text_12"
                             android:gravity="center"
@@ -250,7 +256,7 @@
                             android:textStyle="bold"
                             android:layout_below="@+id/text_11"
 
-                            android:text="@string/objects_12"/>
+                            android:text="@string/regular_12"/>
 
                         <TextView
                             android:id="@+id/text_13"
@@ -259,7 +265,6 @@
                             android:paddingLeft="8dp"
                             android:fontFamily="sans-serif"
                             android:textSize="20sp"
-
                             android:textColor="@color/black"
 
                             android:layout_width="match_parent"
@@ -267,119 +272,82 @@
 
                             android:layout_below="@+id/text_12"
 
-                            android:text="@string/objects_13"/>
-
-
-                        <TextView
+                            android:text="@string/regular_13"/>
+                        <ImageView
                             android:id="@+id/text_14"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:background="@color/dim_gray"
-                            android:textColor="@color/black"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_4_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+
                             android:layout_below="@+id/text_13"
 
-                            android:text="@string/objects_14"/>
-
-
-                        <TextView
+                            />
+                        <ImageView
                             android:id="@+id/text_15"
                             android:gravity="left"
-                            android:layout_marginTop="7dp"
-                            android:paddingLeft="8dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
 
-                            android:textColor="@color/black"
+
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_5_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_below="@+id/text_14"
 
-                            android:text="@string/objects_15"/>
-
-                        <TextView
+                            />
+                        <ImageView
                             android:id="@+id/text_16"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-                            android:background="@color/dim_gray"
-                            android:textColor="@color/black"
+                            android:gravity="left"
+
+                            android:paddingStart="8dp"
+                            android:focusable="true"
+
+
+                            android:src="@drawable/regular_6_image"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+
                             android:layout_below="@+id/text_15"
 
-                            android:text="@string/objects_16"/>
-
+                            />
                         <TextView
                             android:id="@+id/text_17"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                            android:textColor="@color/colorAccent"
+                            android:gravity="left"
+                            android:layout_marginTop="7dp"
+                            android:paddingLeft="8dp"
+                            android:fontFamily="sans-serif"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+
                             android:layout_below="@+id/text_16"
 
-                            android:text="@string/objects_17"/>
-
-                        <TextView
-                            android:id="@+id/text_18"
-                            android:gravity="left"
-                            android:layout_marginTop="7dp"
-                            android:paddingLeft="8dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-
-                            android:textColor="@color/black"
-
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:layout_below="@+id/text_17"
-
-                            android:text="@string/objects_18"/>
-
-
-
-
-
-                        <TextView
-                            android:id="@+id/text_19"
-                            android:gravity="left"
-                            android:layout_marginTop="7dp"
-                            android:paddingLeft="8dp"
-                            android:fontFamily="sans-serif"
-                            android:textSize="20sp"
-
-                            android:textColor="@color/black"
-
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:layout_below="@+id/text_18"
-
-                            android:text="@string/objects_19"
+                            android:text="@string/regular_17"
                             android:paddingBottom="50dp"/>
 
 
 
 
+
+
                         <View
-                            android:layout_below="@id/text_16"
+                            android:layout_below="@id/text_6"
                             android:layout_width="match_parent"
-                            android:layout_marginTop="70dp"
+                            android:layout_marginTop="40dp"
                             android:layout_height="120dp" />
 
                     </RelativeLayout>
@@ -394,7 +362,7 @@
 
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
-        android:id="@+id/nav_tutorial_objects"
+        android:id="@+id/nav_tutorial_regular"
 
 
 

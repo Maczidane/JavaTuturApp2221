@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SetSelectFragment">
+
+
+<LinearLayout
+    android:id="@+id/linear1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 4"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Questions Set 6"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_7"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Structural Questions Set 1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_8"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Structural Questions Set 2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewBasic_9"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:clickable="true"
+
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/textViewBasic_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+
+            android:padding="2dp"
+            android:text="Structural Questions Set 3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4d4d4d" />
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

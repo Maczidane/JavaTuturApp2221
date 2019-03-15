@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AdvancedFragment advancedFragment;
 
+    private SetSelectFragment setSelectFragment;
+
 
 
 
@@ -96,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
         advancedFragment = new AdvancedFragment();
 
+        setSelectFragment = new SetSelectFragment();
+
 
 
         Bundle s = getIntent().getExtras();
@@ -105,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             if (frag.equals("Questions")) {
                 //Toast.makeText(getApplicationContext(),frag,Toast.LENGTH_LONG).show();
 
-                setFragment(mQuestionFragment);
+                setFragment(setSelectFragment);
                 mBottomNavigationView.setSelectedItemId(R.id.nav_questions);
                 mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -144,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                                 return true;
 
                             case R.id.nav_questions:
-                                setFragment(mQuestionFragment);
+                                setFragment(setSelectFragment);
                                 return true;
 
 
@@ -167,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                                 return true;
 
                             case R.id.nav_questions:
-                                setFragment(mQuestionFragment);
+                                setFragment(setSelectFragment);
                                 return true;
 
 

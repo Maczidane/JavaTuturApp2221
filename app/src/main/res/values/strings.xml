@@ -562,5 +562,169 @@ Declaring an array variable, creating an array, and assigning the reference of t
     <string name="array_27">1.9\n 2.9\n 3.4\n 3.5\n</string>
     <string name="array_28">The Arrays Class</string>
     <string name="array_29">The java.util.Arrays class contains various static methods for sorting and searching arrays, comparing arrays, and filling array elements. These methods are overloaded for all primitive types.</string>
+    <string name="objects_1">Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts −\n\n - Polymorphism\n -Inheritance\n - Encapsulation\n - Abstraction\n - Classes\n - Objects\n - Instance\n - Method\n - Message Passing\n\n In this chapter, we will look into the concepts : Classes and Objects.\n\n
+
+<b>Object</b> − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class.\n\n
+
+<b>Class</b> − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.\n</string>
+    <string name="objects_2">Objects in Java</string>
+    <string name="objetcs_3">Let us now look deep into what are objects. If we consider the real-world, we can find many objects around us, cars, dogs, humans, etc. All these objects have a state and a behavior.\n\n If we consider a dog, then its state is - name, breed, color, and the behavior is\n - barking, wagging the tail, running.\n\n If you compare the software object with a real-world object, they have very similar characteristics.\n\n Software objects also have a state and a behavior. A software object\'s state is stored in fields and behavior is shown via methods.\n\n So in software development, methods operate on the internal state of an object and the object-to-object communication is done via methods.\n</string>
+    <string name="objects_4">Classes in Java</string>
+    <string name="objects_5">A class is a blueprint from which individual objects are created.\n\n Following is a sample of a class.\n\n <b>Example</b>\n</string>
+    <string name="objects_6">public class Dog {\n
+        \tString breed; int age;\n
+        \tString color;\n
+        \tvoid barking() {\n
+
+        \t} \n
+        \tvoid hungry() {\n
+
+        \t}\n
+        \tvoid sleeping()\n
+        \t{\n
+
+        \t} \n
+        }</string>
+    <string name="objects_7">A class can contain any of the following variable types: \n\n <b>Local variables</b> − Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.\n\n <b>Instance variables</b> − Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.\n\n <b>Class variables</b> − Class variables are variables declared within a class, outside any method, with the static keyword.\n\n A class can have any number of methods to access the value of various kinds of methods. In the above example, barking(), hungry() and sleeping() are methods.\n\n Following are some of the important topics that need to be discussed when looking into classes of the Java Language.\n</string>
+    <string name="objects_8">Constructors</string>
+    <string name="objects_9">When discussing about classes, one of the most important sub topic would be constructors. Every class has a constructor. If we do not explicitly write a constructor for a class, the Java compiler builds a default constructor for that class.\n\n Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor. Following is an example of a constructor − <b>Example</b>\n\n</string>
+    <string name="objects_10">public class Puppy {\n
+        \tpublic Puppy() {\n
+        }\n
+       \t public Puppy(String name) {\n
+        \t// This constructor has one parameter, name.\n
+        } \n
+        }</string>
+    <string name="object_11">Java also supports Singleton Classes where you would be able to create only one instance of a class.\n\n <b>Note</b> − We have two different types of constructors. We are going to discuss constructors in detail in the subsequent chapters.\n</string>
+    <string name="objects_12">Creating an Object</string>
+    <string name="objects_13">As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects.\n\n There are three steps when creating an object from a class: \n\n − <b>Declaration</b> − A variable declaration with a variable name with an object type.\n\n - <b>Instantiation </b>− The \'new\' keyword is used to create the object.\n\n <b>Initialization</b> − The \'new\' keyword is followed by a call to a constructor. This call initializes the new object.\n\n Following is an example of creating an object −\n\n <b>Example</b>\n\n</string>
+    <string name="objects_14">public class Puppy {\n
+   \tpublic Puppy(String name) {\n
+     \t // This constructor has one parameter, name.\n
+     \t System.out.println(\"Passed Name is :\" + name );\n
+   \t}
+
+   \tpublic static void main(String []args) {\n
+      \t// Following statement would create an object myPuppy\n
+     \t Puppy myPuppy = new Puppy( \"tommy\" );\n
+   \t}\n
+}</string>
+    <string name="objects_15">If we compile and run the above program, then it will produce the following result −\n\n <b>Output</b>\n\n</string>
+    <string name="objects_16">Passed Name is :tommy</string>
+    <string name="objects_17">Accessing Instance Variables and Methods</string>
+    <string name="objects_18">Instance variables and methods are accessed via created objects. To access an instance variable, following is the fully qualified path −</string>
+    <string name="objects_19">/* First create an object */ \nObjectReference = new Constructor();\n /* Now call a variable as follows */\n ObjectReference.variableName; \n/* Now you can call a class method as follows */ \nObjectReference.MethodName();\n</string>
+    <string name="constructor_1">A constructor initializes an object when it is created. It has the same name as its class and is syntactically similar to a method. However, constructors have no explicit return type.\n\n Typically, you will use a constructor to give initial values to the instance variables defined by the class, or to perform any other start-up procedures required to create a fully formed object.\n\n All classes have constructors, whether you define one or not, because Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.\n</string>
+    <string name="constructor_2">Syntax</string>
+    <string name="constructor_3">Following is the syntax of a constructor −</string>
+    <string name="constructor_4">class ClassName {\n
+        \tClassName() {\n
+        \t}\n
+        }</string>
+    <string name="constructor_5">Java allows two types of constructors namely :\n\n - No argument Constructors\n\n - Parameterized Constructors\n</string>
+    <string name="constructor_6">No argument Constructors</string>
+    <string name="constructor_7">As the name specifies the no argument constructors of Java does not accept any parameters instead, using these constructors the instance variables of a method will be initialized with fixed values for all objects.\n\n <b>Example</b>\n\n</string>
+    <string name="constructor_8">Public class MyClass {\n
+        \tInt num;\n
+        \tMyClass() {\n
+        \tnum = 100;\n
+        \t}\n
+        }</string>
+    <string name="constructor_9">You would call constructor to initialize objects as follows</string>
+    <string name="constructor_10">public class ConsDemo {\n
+   \tpublic static void main(String args[]) {\n
+     \t MyClass t1 = new MyClass();\n
+     \t MyClass t2 = new MyClass();\n
+     \t System.out.println(t1.num + \" \" + t2.num);\n
+   \t}
+}</string>
+    <string name="constructor_11">This would produce the following result</string>
+    <string name="constructor_12">100 100</string>
+    <string name="constructor_13">Parameterized Constructors</string>
+    <string name="constructor_14">Most often, you will need a constructor that accepts one or more parameters. Parameters are added to a constructor in the same way that they are added to a method, just declare them inside the parentheses after the constructor\'s name.\n\n <b>Example</b>\n\n Here is a simple example that uses a constructor −\n\n</string>
+    <string name="constructor_15">// A simple constructor.\n class MyClass {\n
+        \tint x;\n
+        \t// Following is the constructor\n
+        \tMyClass(int i ) {\n
+        \tx = i;\n
+        \t}\n
+        }</string>
+    <string name="constructor_16">You would call constructor to initialize objects as follows −</string>
+    <string name="constructor_17">public class ConsDemo {\n
+   \tpublic static void main(String args[]) {\n
+      \tMyClass t1 = new MyClass( 10 );\n
+      \tMyClass t2 = new MyClass( 20 );\n
+      \tSystem.out.println(t1.x + " " + t2.x);\n
+   }\n
+}</string>
+    <string name="constructor_18">This would produce the following result −</string>
+    <string name="constructor_19">10 20</string>
+    <string name="modifiers_1">Modifiers are keywords that you add to those definitions to change their meanings. Java language has a wide variety of modifiers, including the following : \n\n − Java Access Modifiers\n\n - Non Access Modifiers\n\n To use a modifier, you include its keyword in the definition of a class, method, or variable. The modifier precedes the rest of the statement, as in the following example.\n\n <b>Example</b>\n\n</string>
+    <string name="modifiers_2">public class className {\n
+        \t// …\n
+        \t}\n
+        \tprivate boolean myFlag;\n
+        \tstatic final double weeks = 9.5;\n
+        \tprotected static final int BOXWIDTH = 42;\n
+        \tpublic static void main(String[] arguments) {\n
+        \t// body of method\n
+        }</string>
+    <string name="modifiers_3">Access Control Modifiers</string>
+    <string name="modifiers_4">Java provides a number of access modifiers to set access levels for classes, variables, methods and constructors. The four access levels are : \n\n − Visible to the package, the default. No modifiers are needed.\n - Visible to the class only (private).\n - Visible to the world (public).\n - Visible to the package and all subclasses (protected).\n\n</string>
+    <string name="modifiers_5">Non-Access Modifiers</string>
+    <string name="modifiers_6">Java provides a number of non-access modifiers to achieve many other functionality.\n\n - The static modifier for creating class methods and variables.\n\n - The final modifier for finalizing the implementations of classes, methods, and variables.\n\n - The abstract modifier for creating abstract classes and methods.\n\n - The synchronized and volatile modifiers, which are used for threads.\n\n</string>
+    <string name="decision_1">Decision making structures have one or more conditions to be evaluated or tested by the program, along with a statement or statements that are to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.\n\n Following is the general form of a typical decision making structure found in most of the programming languages −</string>
+    <string name="decision_3">Java programming language provides following types of decision making statements. Click the following links to check their detail.</string>
+    <string name="decision_5">The ? : Operator</string>
+    <string name="decision_6">We have covered <b>conditional operator ? :</b> in the previous chapter which can be used to replace <b>if…else</b> statements. It has the following general form −</string>
+    <string name="decision_7">Exp1 ? Exp2 : Exp3;</string>
+    <string name="decision_8">Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon.\n\n To determine the value of the whole expression, initially exp1 is evaluated.\n\n - If the value of exp1 is true, then the value of Exp2 will be the value of the whole expression.\n\n - If the value of exp1 is false, then Exp3 is evaluated and its value becomes the value of the entire expression.\n\n</string>
+    <string name="regular_1">Java provides the java.util.regex package for pattern matching with regular expressions. Java regular expressions are very similar to the Perl programming language and very easy to learn.\n\n A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern. They can be used to search, edit, or manipulate text and data.\n\n The java.util.regex package primarily consists of the following three classes: \n\n − <b>Pattern Class</b> − A Pattern object is a compiled representation of a regular expression. The Pattern class provides no public constructors. To create a pattern, you must first invoke one of its public static <b>compile() </b>methods, which will then return a Pattern object. These methods accept a regular expression as the first argument.\n\n - <b>Matcher Class</b> − A Matcher object is the engine that interprets the pattern and performs match operations against an input string. Like the Pattern class, Matcher defines no public constructors. You obtain a Matcher object by invoking the <b>matcher()</b> method on a Pattern object.\n\n - <b>PatternSyntaxException</b> − A PatternSyntaxException object is an unchecked exception that indicates a syntax error in a regular expression pattern.\n</string>
+    <string name="regular_2">Capturing Groups</string>
+    <string name="regular_4"><![CDATA[Capturing groups are a way to treat multiple characters as a single unit. They are created by placing the characters to be grouped inside a set of parentheses. For example, the regular expression (dog) creates a single group containing the letters \"d\", \"o\", and \"g\".\n\n
+
+Capturing groups are numbered by counting their opening parentheses from the left to the right. In the expression ( ( A ) ( B ( C ) ) ), for example, there are four such groups : \n\n
+
+- ( ( A )( B( C ) ) )\n
+- ( A )\n
+- ( B ( C ) )\n
+- ( C )\n\n
+To find out how many groups are present in the expression, call the groupCount method on a matcher object. The groupCount method returns an int showing the number of capturing groups present in the matcher's pattern.\n\n
+
+There is also a special group, group 0, which always represents the entire expression. This group is not included in the total reported by groupCount.\n\n
+
+        <b>Example</b>\n\n
+
+Following example illustrates how to find a digit string from the given alphanumeric string −\n\n]]></string>
+    <string name="regular_44">import java.util.regex.Matcher;\n
+import java.util.regex.Pattern;\n
+
+\tpublic class RegexMatches {\n
+
+   \tpublic static void main( String args[] ) {\n
+     \t // String to be scanned to find the pattern.\n
+      \tString line = \"This order was placed for QT3000! OK?\";\n
+      \tString pattern = \"(.*)(\\d+)(.*)\";\n
+
+     \t // Create a Pattern object\n
+      \tPattern r = Pattern.compile(pattern);\n
+
+     \t // Now create matcher object.\n
+      \tMatcher m = r.matcher(line);\n
+      \tif (m.find( )) {\n
+         \tSystem.out.println(\"Found value: \" + m.group(0) );\n
+         \tSystem.out.println(\"Found value: \" + m.group(1) );\n
+        \t System.out.println(\"Found value: \" + m.group(2) );\n
+      \t}else {\n
+        \t System.out.println(\"NO MATCH\");\n
+      \t}\n
+  \t }\n
+}</string>
+    <string name="regular_5">This will produce the following result −\n\n <b>Output</b>\n\n</string>
+    <string name="regular_6">Found value: This order was placed for QT3000! OK?\n Found value: This order was placed for QT300\n Found value: 0\n</string>
+    <string name="regular_8">Here is the table listing down all the regular expression metacharacter syntax available in Java −\n\n</string>
+    <string name="regular_12">Methods of the Matcher Class</string>
+    <string name="regular_13">Here is a list of useful instance methods −</string>
+    <string name="regular_17">For more on Regular Expressions, visit https://www.tutorialspoint.com/java/java_regular_expressions.htm</string>
 
 </resources>

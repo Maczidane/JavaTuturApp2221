@@ -39,6 +39,14 @@ public class TutorialActivity extends AppCompatActivity {
 
     private ArraysFragment arraysFragment;
 
+    private ModifiersFragment modifiersFragment;
+
+    private DecisionFragment decisionFragment;
+
+    private RegularFragment regularFragment;
+
+    private ConstructorFragment constructorFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +79,14 @@ public class TutorialActivity extends AppCompatActivity {
         loopsFragment = new LoopsFragment();
 
         arraysFragment = new ArraysFragment();
+
+        constructorFragment = new ConstructorFragment();
+
+        modifiersFragment = new ModifiersFragment();
+
+        decisionFragment = new DecisionFragment();
+
+        regularFragment = new RegularFragment();
 
         //setFragment(introFragment);
 
@@ -125,6 +141,18 @@ public class TutorialActivity extends AppCompatActivity {
                 case "Arrays":
                     setFragment(arraysFragment);
                     break;
+                case "Constructors":
+                    setFragment(constructorFragment);
+                    break;
+                case "Regular":
+                    setFragment(regularFragment);
+                    break;
+                case "Modifiers":
+                    setFragment(modifiersFragment);
+                    break;
+                case "Decision":
+                    setFragment(decisionFragment);
+                    break;
             }
 
         }
@@ -140,6 +168,7 @@ public class TutorialActivity extends AppCompatActivity {
                setFragment(basicFragment);
                 finish();
                 return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);
