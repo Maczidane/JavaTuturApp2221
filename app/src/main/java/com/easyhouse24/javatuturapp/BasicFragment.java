@@ -113,7 +113,7 @@ public class BasicFragment extends Fragment {
         double x = 5.555555559;
         double y = x + 2.444444445;
         progressBar.setMax(100);
-        progressBar.setMin(0);
+        //progressBar.setMin(0);
 
 
         if (prefAdvanced != null) {

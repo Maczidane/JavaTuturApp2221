@@ -205,7 +205,7 @@ public class AdvancedFragment extends Fragment {
         double x = 16.6666666667;
         double y = x + 5.444444445;
         progressBar.setMax(100);
-        progressBar.setMin(0);
+        //progressBar.setMin(0);
 
 
         if (prefAdvanced != null) {
