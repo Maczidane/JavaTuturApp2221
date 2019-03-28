@@ -161,7 +161,7 @@ public class QuestionFragment extends Fragment {
         if (highscore >= 7 && highscore < 9) {
             int silver2 = silver1 + 1;
 
-            String silver3 = String.valueOf(silver2);
+            String silver3 = String.valueOf(silver2);    
             textViewSilver.setText(silver3);
             SharedPreferences prefSilver = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
             SharedPreferences.Editor editor = prefSilver.edit();
