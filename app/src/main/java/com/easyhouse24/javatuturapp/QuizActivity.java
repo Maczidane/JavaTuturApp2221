@@ -38,6 +38,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
+import static com.easyhouse24.javatuturapp.QuestionFragment.KEY_HIGHSCORE;
+import static com.easyhouse24.javatuturapp.QuestionFragment.SHARED_PREF_Bronze;
+import static com.easyhouse24.javatuturapp.QuestionFragment.SHARED_PREF_GOLD;
+import static com.easyhouse24.javatuturapp.QuestionFragment.SHARED_PREF_SILVER;
+
 public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_SCORE = "extraScore";
     private Toolbar mToolbar;
@@ -569,7 +574,7 @@ public class QuizActivity extends AppCompatActivity {
 
         }
         else{
-            finishQuiz();
+            showScoreAlert(score);
         }
 
 
@@ -682,11 +687,46 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
     public void finishQuiz(){
+        if (score >= 7 && score < 9) {
+
+            SharedPreferences prefSilver = getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefSilver.edit();
+            editor.putInt(KEY_HIGHSCORE, 1).apply();
+        }
+        else if(score >= 9){
+            SharedPreferences prefGold =getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefGold.edit();
+            editor.putInt(KEY_HIGHSCORE, 1).apply();
+
+        }
+        else if (score >= 5 && score < 7){
+            SharedPreferences prefBronze = getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefBronze.edit();
+            editor.putInt(KEY_HIGHSCORE, 1).apply();
+        }
         Intent resultIntent = new Intent();
 
         resultIntent.putExtra(EXTRA_SCORE,score);
         setResult(RESULT_OK,resultIntent);
         finish();
+    }
+
+    public void showScoreAlert(int scores){
+
+        String x = String.valueOf(scores);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishQuiz();
+            }
+
+        });
+
+        builder.setMessage("You've answered " + x +" correct questions out of 10. Your score is " + x +" /10");
+        builder.show();
+
     }
 
     public void makeSnackBar(int message, int turnOff, final int message2) {

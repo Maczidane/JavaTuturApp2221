@@ -31,6 +31,12 @@ public class QuestionFragment extends Fragment {
     public static final String SHARED_PREF_Bronze = "sharedPrefsBronze";
 
     public static final String KEY_HIGHSCORE = "keyHighscore";
+    private static final String SHARED_PREF_Bronze1 = "sharedPrefsBronze1";
+    private static final String SHARED_PREF_GOLD1 = "sharedPrefsGold1";
+    private static final String SHARED_PREF_SILVER1 = "sharedPrefsSilver1";
+    private static final String KEY_HIGHSCORE1 = "keyHighscore1";
+    private static final String KEY_HIGHSCORE2 = "keyHighscore2";
+    private static final String KEY_HIGHSCORE3 = "keyHighscore3";
 
     private int highscore;
 
@@ -58,18 +64,10 @@ public class QuestionFragment extends Fragment {
 
         textViewSilver = (TextView) v.findViewById(R.id.textViewSilver);
         textViewGold = (TextView) v.findViewById(R.id.textViewGold);
+
         loadHighscore();
 
-        //loadHighscore();
 
-        SharedPreferences pref = getActivity().getSharedPreferences("IC_GOLD", Context.MODE_PRIVATE);
-        SharedPreferences pref1 = getActivity().getSharedPreferences("IC_SILVER", Context.MODE_PRIVATE);
-        SharedPreferences pref2 = getActivity().getSharedPreferences("IC_BRONZE", Context.MODE_PRIVATE);
-
-
-        String prefGold = pref.getString("Gold", null);
-        String prefSilver = pref1.getString("Silver", null);
-        String prefBronze = pref2.getString("Bronze", null);
 
 
         mButton = (Button) v.findViewById(R.id.btn_start_quiz);
@@ -107,47 +105,46 @@ public class QuestionFragment extends Fragment {
 
     private void loadHighscore() {
         SharedPreferences prefSilver = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
-        int highscoreSilver = prefSilver.getInt(KEY_HIGHSCORE, 0);
+
+        int highscoreSilver = prefSilver.getInt(KEY_HIGHSCORE2, 0);
+
 
         SharedPreferences prefGold = getActivity().getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
-        int highscoreGold = prefSilver.getInt(KEY_HIGHSCORE, 0);
+
+        int highscoreGold = prefGold.getInt(KEY_HIGHSCORE1, 0);
 
         SharedPreferences prefBronze = getActivity().getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
-        int highscoreBronze = prefSilver.getInt(KEY_HIGHSCORE, 0);
+        int highscoreBronze = prefBronze.getInt(KEY_HIGHSCORE3, 0);
 
 
-        String gold = textViewGold.getText().toString();
-        String silver = textViewSilver.getText().toString();
-        String bronze = textViewbronse.getText().toString();
 
-
-        int gold1 = Integer.parseInt(gold);
-        int silver1 = Integer.parseInt(silver);
-        int bronze1 = Integer.parseInt(bronze);
-
-        if (silver1 >= 3 && gold1 >= 2 && bronze1 >= 5) {
+        if (highscoreSilver >= 3 && highscoreGold >= 2 && highscoreBronze >= 5) {
             SuccessAlert();
         }
 
 
-        int silver2 = silver1 + highscoreSilver;
+        int silver20 =  highscoreSilver;
 
-        String silver3 = String.valueOf(silver2);
+        String silver3 = String.valueOf(silver20);
         textViewSilver.setText(silver3);
 
-        int gold2 = gold1 + highscoreGold;
+        int gold20 =  highscoreGold;
 
-        String gold3 = String.valueOf(gold2);
+        String gold3 = String.valueOf(gold20);
         textViewSilver.setText(gold3);
 
-        int bronze2 = bronze1 + highscoreBronze;
+        int bronze20 = highscoreBronze;
 
-        String bronze3 = String.valueOf(bronze2);
+
+        String bronze3 = String.valueOf(bronze20);
         textViewSilver.setText(bronze3);
+
+
 
     }
 
     private void updateHighscore(int highscoreNew) {
+        store();
         highscore = highscoreNew;
 
         String gold = textViewGold.getText().toString();
@@ -159,31 +156,63 @@ public class QuestionFragment extends Fragment {
         int bronze1 = Integer.valueOf(bronze);
 
         if (highscore >= 7 && highscore < 9) {
+
+
             int silver2 = silver1 + 1;
 
-            String silver3 = String.valueOf(silver2);    
+
+            String silver3 = String.valueOf(silver2);
             textViewSilver.setText(silver3);
-            SharedPreferences prefSilver = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefSilver.edit();
-            editor.putInt(KEY_HIGHSCORE, silver2).apply();
+
+
         } else if (highscoreNew >= 9) {
+
+
+
             int gold2 = gold1 + 1;
 
             String gold3 = String.valueOf(gold2);
-            textViewSilver.setText(gold3);
-            SharedPreferences prefGold = getActivity().getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefGold.edit();
-            editor.putInt(KEY_HIGHSCORE, gold2).apply();
+            textViewGold.setText(gold3);
+
+
         } else if (highscore >= 5 && highscore < 7) {
+
+
             int bronze2 = bronze1 + 1;
 
             String bronze3 = String.valueOf(bronze2);
-            textViewSilver.setText(bronze3);
-            SharedPreferences prefBronze = getActivity().getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefBronze.edit();
-            editor.putInt(KEY_HIGHSCORE, bronze2).apply();
+            textViewbronse.setText(bronze3);
+
+
         }
 
+
+
+
+    }
+
+    public void store(){
+        String gold11 = textViewGold.getText().toString();
+        String silver11 = textViewSilver.getText().toString();
+        String bronze11 = textViewbronse.getText().toString();
+
+
+        int gold21 = Integer.parseInt(gold11);
+        int silver21 = Integer.parseInt(silver11);
+        int bronze21 = Integer.parseInt(bronze11);
+
+        SharedPreferences prefBronze1 = getActivity().getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = prefBronze1.edit();
+        editor2.putInt(KEY_HIGHSCORE3, bronze21).apply();
+
+        SharedPreferences prefGold1 = getActivity().getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
+        SharedPreferences.Editor editor1 = prefGold1.edit();
+        editor1.putInt(KEY_HIGHSCORE1, gold21).apply();
+
+
+        SharedPreferences prefSilver1 = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefSilver1.edit();
+        editor.putInt(KEY_HIGHSCORE2, silver21).apply();
 
     }
 
