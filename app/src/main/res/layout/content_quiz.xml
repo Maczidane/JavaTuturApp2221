@@ -24,8 +24,8 @@
 
             android:layout_alignBottom="@+id/progressBar"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="21dp"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="21dp"
             android:gravity="center">
 
 
@@ -69,11 +69,11 @@
                         android:id="@+id/radioGroup2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="44dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
                         android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="44dp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -83,38 +83,38 @@
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton"
-                            android:buttonTint="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:buttonTint="@color/black"
                             android:freezesText="true"
                             android:text="RadioButton" />
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton2"
-                            android:buttonTint="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:buttonTint="@color/black"
                             android:freezesText="true"
                             android:text="RadioButton" />
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton3"
-                            android:buttonTint="@color/black"
                             android:layout_width="wrap_content"
-                            android:freezesText="true"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:buttonTint="@color/black"
+                            android:freezesText="true"
                             android:text="RadioButton" />
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton4"
-                            android:buttonTint="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:freezesText="true"
                             android:layout_weight="1"
+                            android:buttonTint="@color/black"
+                            android:freezesText="true"
                             android:text="RadioButton" />
                     </RadioGroup>
 
@@ -123,13 +123,13 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:freezesText="true"
-                        android:layout_marginRight="8dp"
                         android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="52dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:freezesText="true"
                         android:text="@string/question"
                         android:textColor="@color/colorBlack"
                         android:textStyle="normal"
@@ -143,13 +143,13 @@
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:freezesText="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="72dp"
                         android:layout_marginRight="72dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:freezesText="true"
                         android:text="@string/timeLabel"
                         android:textStyle="italic"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -161,11 +161,11 @@
                         android:id="@+id/textView_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:freezesText="true"
-                        android:layout_marginBottom="180dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginRight="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="180dp"
+                        android:freezesText="true"
                         android:text="@string/time"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
@@ -178,10 +178,10 @@
                         android:id="@+id/text_view_score"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:freezesText="true"
                         android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="16dp"
+                        android:freezesText="true"
                         android:text="@string/score"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textSize="17sp"
@@ -194,10 +194,10 @@
                         android:id="@+id/nestedScrollView2"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
                         android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -205,40 +205,63 @@
 
 
                         <LinearLayout
+                            android:id="@+id/layout"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/textView_questionaire"
+                            android:layout_height="fill_parent">
+                            <android.support.constraint.ConstraintLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginBottom="48dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginLeft="8dp"
-                                android:layout_marginRight="8dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:text="@string/questionaire"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="20sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView2"
-                                app:layout_constraintEnd_toEndOf="@+id/nestedScrollView2"
-                                app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toStartOf="@+id/nestedScrollView2"
-                                app:layout_constraintTop_toTopOf="@+id/nestedScrollView2"
-                                app:layout_constraintVertical_bias="0.014" />
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView_questionaire"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:text="@string/questionaire"
+                                    android:textColor="@color/colorBlack"
+
+
+
+                                    android:textSize="20sp"
+                                    app:layout_constraintBottom_toTopOf="@+id/textViewSolution"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/textViewSolution"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+
+
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:text=""
+                                    android:textColor="@color/green"
+                                    android:textSize="20sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </android.support.constraint.ConstraintLayout>
+
+
                         </LinearLayout>
+
+
                     </android.support.v4.widget.NestedScrollView>
+
+
 
                     <Button
                         android:id="@+id/buttonNext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="24dp"
                         android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
                         android:freezesText="true"
                         android:text="@string/btn"
 
@@ -263,11 +286,11 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:freezesText="true"
-
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="15dp"
+
+            android:freezesText="true"
             android:indeterminate="false"
             android:theme="@style/AppTheme" />
 

@@ -90,6 +90,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private int questionCountTotal;
 
+    private TextView textView3;
+
     private Question currentQuestion;
 
     private int score;
@@ -114,6 +116,9 @@ public class QuizActivity extends AppCompatActivity {
         textViewQuestionCount = findViewById(R.id.textView4);
 
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        textView3 = (TextView) findViewById(R.id.textViewSolution);
+        textView3.setVisibility(View.INVISIBLE);
 
         //Making progressBar visible
         mProgressBar.setVisibility(View.VISIBLE);
@@ -539,6 +544,7 @@ public class QuizActivity extends AppCompatActivity {
 
         mRadioGroup.clearCheck();
 
+
         //implementing a progress bar
 
         int questionCounter1 = mQuestionList.size();
@@ -553,6 +559,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (questionCounter < questionCountTotal)
         {
+            textView3.setVisibility(View.INVISIBLE);
             currentQuestion = mQuestionList.get(questionCounter);
 
             textViewQuestion.setText(currentQuestion.getQuestion());
@@ -662,24 +669,33 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()){
             case 1:
                 mRadioButton1.setTextColor(Color.GREEN);
-                textViewQuestion.setText(currentQuestion.getSolution());
+                textViewQuestion.setText(currentQuestion.getQuestion());
+                textView3.setVisibility(View.VISIBLE);
+                textView3.setText(currentQuestion.getSolution());
                 break;
             case 2:
                 mRadioButton2.setTextColor(Color.GREEN);
-                textViewQuestion.setText(currentQuestion.getSolution());
+                textView3.setVisibility(View.VISIBLE);
+                textViewQuestion.setText(currentQuestion.getQuestion());
+                textView3.setText(currentQuestion.getSolution());
                 break;
             case 3:
                 mRadioButton3.setTextColor(Color.GREEN);
-                textViewQuestion.setText(currentQuestion.getSolution());
+                textView3.setVisibility(View.VISIBLE);
+                textViewQuestion.setText(currentQuestion.getQuestion());
+                textView3.setText(currentQuestion.getSolution());
                 break;
             case 4:
                 mRadioButton4.setTextColor(Color.GREEN);
-                textViewQuestion.setText(currentQuestion.getSolution());
+                textView3.setVisibility(View.VISIBLE);
+                textViewQuestion.setText(currentQuestion.getQuestion());
+                textView3.setText(currentQuestion.getSolution());
                 break;
         }
 
         if (questionCounter < questionCountTotal)
         {
+
             btn.setText("Next");
         }
         else{
