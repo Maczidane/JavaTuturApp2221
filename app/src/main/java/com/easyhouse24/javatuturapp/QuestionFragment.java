@@ -122,6 +122,13 @@ public class QuestionFragment extends Fragment {
             SuccessAlert();
         }
 
+        else if(highscoreGold >= 3)
+        {         SuccessAlert();
+
+        }
+
+
+
 
         int silver20 =  highscoreSilver;
 
@@ -152,6 +159,7 @@ public class QuestionFragment extends Fragment {
         String bronze = textViewbronse.getText().toString();
 
         int gold1 = Integer.valueOf(gold);
+
         int silver1 = Integer.valueOf(silver);
         int bronze1 = Integer.valueOf(bronze);
 
@@ -169,7 +177,13 @@ public class QuestionFragment extends Fragment {
 
 
 
+
             int gold2 = gold1 + 1;
+
+            if (gold2 >= 3)
+            {
+                SuccessAlert();
+            }
 
             String gold3 = String.valueOf(gold2);
             textViewGold.setText(gold3);

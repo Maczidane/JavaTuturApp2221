@@ -726,5 +726,386 @@ import java.util.regex.Pattern;\n
     <string name="regular_12">Methods of the Matcher Class</string>
     <string name="regular_13">Here is a list of useful instance methods −</string>
     <string name="regular_17">For more on Regular Expressions, visit https://www.tutorialspoint.com/java/java_regular_expressions.htm</string>
+    <string name="see_program">SEE PROGRAM</string>
+    <string name="des_1_programs">A simple example of using for loops to calculate factorial. Uses the built in int data type so only good to 13!</string>
+    <string name="program_copied">Program Copied to Clipboard</string>
+    <string name="listing_java_1"><![CDATA[
+    public class Factorial {
+     \tpublic static void main(String[] args) \t{
+     \tfinal int NUM_FACTS = 100;
+      \t\tfor(int i = 0; i < NUM_FACTS; i++)
+       \t\t\tSystem.out.println( i + \"! is \" + factorial(i));
+        \t}
+         \t \tpublic static int factorial(int n) \t{
+         \tint result = 1;
+         \t\tfor(int i = 2; i <= n; i++)
+          \t\t\tresult *= i;
+           \t\treturn result;
+           \t}
+
+           }
+]]></string>
+    <string name="listing_java_5"><![CDATA[
+    import java.math.BigInteger;
+     import java.util.Random;
+       public class PrimeEx {
+         \t/** \t * @param args \t */
+         \tpublic static void main(String[] args) {
+         \t\tprintTest(10, 4); \t\tprintTest(2, 2);
+         \t\tprintTest(54161329, 4);
+         \t\tprintTest(1882341361, 2);
+          \t\tprintTest(36, 9);
+          \t\tSystem.out.println(isPrime(54161329) + \" expect false\");
+          \t\tSystem.out.println(isPrime(1882341361) + \" expect true\");
+          \t\tSystem.out.println(isPrime(2) + \" expect true\");
+          \t\tint numPrimes = 0;
+          \t\tStopwatch s = new Stopwatch();
+          \t\ts.start();
+          \t\tfor(int i = 2; i < 10000000; i++) {
+                     \t\t\tif(isPrime(i))
+                      {
+                     \t\t\t\tnumPrimes++;
+                     \t\t\t} \t\t
+                     }
+                     \t\ts.stop();
+                     \t\tSystem.out.println(numPrimes + \" \" + s);
+                      \t\ts.start();
+                       \t\tboolean[] primes = getPrimes(10000000);
+                       \t\tint np = 0;
+                        \t\tfor(boolean b : primes) \t\t\tif(b) \t\t\t\tnp++;
+                         \t\ts.stop();
+                          \t\tSystem.out.println(np + \" \" + s);
+                            \t\tSystem.out.println(new BigInteger(1024, 10, new Random()));
+                             \t}
+                  \tpublic static boolean[] getPrimes(int max) {
+                   \t\tboolean[] result = new boolean[max + 1];
+                    \t\tfor(int i = 2; i < result.length; i++) \t\t\tresult[i] = true;
+                     \t\tfinal double LIMIT = Math.sqrt(max);
+                      \t\tfor(int i = 2; i <= LIMIT; i++) { \t\t\tif(result[i]) {
+                            \t\t\t\t// cross out all multiples;
+                             \t\t\t\tint index = 2 * i;
+                              \t\t\t\twhile(index < result.length){
+                               \t\t\t\t\tresult[index] = false;
+                                \t\t\t\t\t index += i;
+                                 \t\t\t\t} \t\t\t} \t\t} \t\treturn result;
+                                 \t
+                                 }
+                   \tpublic static void printTest(int num, int expectedFactors) {
+                        \t\tStopwatch st = new Stopwatch();
+                         \t\tst.start(); \t\tint actualFactors = numFactors(num);
+                          \t\tst.stop();
+                           \t\tSystem.out.println(\"Testing \" + num + \" expect \" + expectedFactors + \", \" + \t\t\t\t\"actual \" + actualFactors);
+                             \t\tif(actualFactors == expectedFactors) \t\t\tSystem.out.println(\"PASSED\");
+                                   \t\telse \t\t\tSystem.out.println(\"FAILED\");
+                                   \t\tSystem.out.println(st.time());
+                                    \t}
+
+                    \t// pre: num >= 2
+                     \tpublic static boolean isPrime(int num) {
+                           \t\tassert num >= 2 : \"failed precondition. num must be >= 2. num: \" + num;
+                            \t\tfinal double LIMIT = Math.sqrt(num);
+                             \t\tboolean isPrime = (num == 2) ? true : num % 2 != 0;
+                              \t\tint div = 3;
+                               \t\twhile(div <= LIMIT && isPrime) {
+                                    \t\t\tisPrime = num % div != 0;
+                                     \t\t\tdiv += 2; \t\t} \t\treturn isPrime;
+                                        \t}
+                                \t// pre: num >= 2 \tpublic static int numFactors(int num) {
+                                         \t\tassert num >= 2 : \"failed precondition. num must be >= 2. num: \" + num;
+                                          \t\tint result = 0;
+                                           \t\tfinal double SQRT = Math.sqrt(num);
+                                            \t\tfor(int i = 1; i < SQRT; i++) {
+                                                  t\t\tif(num % i == 0) {
+                                                       \t\t\t\tresult += 2;
+                                                     \t\t\t
+                                                  }
+                                                  \t\t}
+                                              \t\tif(num % SQRT == 0) \t\t\tresult++;
+                                                   \t\treturn result;
+                                                         \t}
+                                                    }]]></string>
+
+    <string name="listing_java_2">public class StringExample{\n
+        public static void main(String[] args)\n
+	{\n
+        String s1 = "Computer Science";\n
+		int x = 307;\n
+		String s2 = s1 + " " + x;\n
+		String s3 = s2.substring(10,17);\n
+		String s4 = "is fun";\n
+		String s5 = s2 + s4;\n
+
+		System.out.println("s1: " + s1);\n
+		System.out.println("s2: " + s2);\n
+		System.out.println("s3: " + s3);\n
+		System.out.println("s4: " + s4);\n
+		System.out.println("s5: " + s5);\n
+
+		//showing effect of precedence\n
+
+		x = 3;\n
+		int y = 5;\n
+		String s6 = x + y + "total";\n
+		String s7 = "total " + x + y;\n
+		String s8 = " " + x + y + "total";\n
+		System.out.println("s6: " + s6);\n
+		System.out.println("s7: " + s7);\n
+		System.out.println("s8: " + s8);\n
+	}\n
+}\n
+
+    </string>
+    <string name="listing_java_3"><![CDATA[public class BinaryConverter {\n
+
+    public static void main(String[] args){\n
+        for(int i = -5; i < 33; i++){\n
+            System.out.println(i + ": " + toBinary(i));\n
+            System.out.println(i);\n
+            //always another way\n
+            System.out.println(i + ": " + Integer.toBinaryString(i));\n
+        }\n
+    }\n
+
+    /*\n
+     * pre: none\n
+     * post: returns a String with base10Num in base 2\n
+     */\n
+    public static String toBinary(int base10Num){\n
+        boolean isNeg = base10Num < 0;\n
+        base10Num = Math.abs(base10Num);\n
+        String result = "";\n
+
+        while(base10Num > 1){\n
+            result = (base10Num % 2) + result;\n
+            base10Num /= 2;\n
+        }\n
+        assert base10Num == 0 || base10Num == 1 : "value is not <= 1: " + base10Num;\n
+
+        result = base10Num + result;\n
+        assert all0sAnd1s(result);\n
+
+        if( isNeg )\n
+            result = "-" + result;\n
+        return result;\n
+    }\n
+
+    /*\n
+     * pre: cal != null\n
+     * post: return true if val consists only of characters 1 and 0, false otherwise\n
+     */\n
+    public static boolean all0sAnd1s(String val){\n
+        assert val != null : "Failed precondition all0sAnd1s. parameter cannot be null";\n
+        boolean all = true;\n
+        int i = 0;\n
+        char c;\n
+
+        while(all && i < val.length()){\n
+            c = val.charAt(i);\n
+            all = c == '0' || c == '1';\n
+            i++;\n
+        }\n
+        return all;\n
+    }\n
+}\n
+]]></string>
+    <string name="listing_java_4"><![CDATA[//sample code to write 100 random ints to a file, 1 per line\n
+
+import java.io.PrintStream;\n
+import java.io.IOException;\n
+import java.io.File;\n
+
+import java.util.Random;\n
+
+public class WriteToFile\n
+{\n	public static void main(String[] args)\n
+	{\n	try\n
+		{\n	PrintStream writer = new PrintStream( new File("randInts.txt"));\n
+			Random r = new Random();\n
+			final int LIMIT = 100;\n
+
+			for(int i = 0; i < LIMIT; i++)\n
+			{	\nwriter.println( r.nextInt() );\n
+			}\n
+			writer.close();\n
+		}\n
+		catch(IOException e)\n
+		{\n	System.out.println("An error occured while trying to write to the file");\n
+		}\n
+	}\n
+}]]></string>
+    <string name="listing_java_6"><![CDATA[import java.io.File;\n
+import java.io.FileNotFoundException;\n
+import java.util.ArrayList;\n
+import java.util.HashMap;\n
+import java.util.Iterator;\n
+import java.util.Map;\n
+import java.util.Scanner;\n
+
+import javax.swing.JFileChooser;\n
+import javax.swing.UIManager;\n
+
+
+public class WordCount {\n
+
+    public static void main(String[] args) {\n
+        countWordsViaGUI();\n
+    }\n
+
+
+    // allow user to pick file to exam via GUI.\n
+    // allow multiple picks\n
+    public static void countWordsViaGUI() {\n
+        setLookAndFeel();\n
+        try {\n
+            Scanner key = new Scanner(System.in);\n
+            do {\n
+                System.out.println("Opening GUI to choose file.");\n
+                Scanner fileScanner = new Scanner(getFile());\n
+                Stopwatch st = new Stopwatch();\n
+                st.start();\n
+                ArrayList<String> words = countWordsWithArrayList(fileScanner);\n
+                st.stop();\n
+                System.out.println("time to count: " + st);\n
+                System.out.print("Enter number of words to display: ");\n
+                int numWordsToShow = Integer.parseInt(key.nextLine());\n
+                showWords(words, numWordsToShow);\n
+                fileScanner.close();\n
+                System.out.print("Perform another count? ");\n
+            } while(key.nextLine().toLowerCase().charAt(0) == \'y\');\n
+            key.close();\n
+        }\n
+        catch(FileNotFoundException e) {\n
+            System.out.println("Problem reading the data file. Exiting the program." + e);\n
+        }\n
+    }\n
+
+
+    // determine distinct words in a file using an array list\n
+    private static ArrayList<String> countWordsWithArrayList(Scanner fileScanner) {\n
+
+
+        System.out.println("Total number of words: " + numWords);\n
+        System.out.println("number of distincy words: " + result.size());\n
+        return result;\n
+    }\n
+
+
+    // determine distinct words in a file and frequency of each word with a Map\n
+    private static Map<String, Integer> countWordsWithMap(Scanner fileScanner) {\n
+
+
+        System.out.println("Total number of words: " + numWords);\n
+        System.out.println("number of distincy words: " + result.size());\n
+        return result;\n
+    }\n
+
+
+    private static void showWords(ArrayList<String> words, int numWordsToShow) {\n
+        for(int i = 0; i < words.size() && i < numWordsToShow; i++)\n
+            System.out.println(words.get(i));\n
+    }\n
+
+
+    private static void showWords(Map<String, Integer> words, int numWordsToShow) {\n
+
+
+
+    }\n
+
+
+    // perform a series of experiments on files. Determine average time to\n
+    // count words in files of various sizes\n
+    private static void performExp() {\n
+        String[] smallerWorks = {"smallWords.txt", "2BR02B.txt", "Alice.txt", "SherlockHolmes.txt"};\n
+        String[] bigFile = {"ciaFactBook2008.txt"};\n
+        timingExpWithArrayList(smallerWorks, 50);\n
+        timingExpWithArrayList(bigFile, 3);\n
+        timingExpWithMap(smallerWorks, 50);\n
+        timingExpWithMap(bigFile, 3);\n
+    }
+
+
+    // pre: titles != null, elements of titles refer to files in the\n
+    // same path as this program, numExp >= 0\n
+    // read words from files and print average time to cound words.\n
+    private static void timingExpWithMap(String[] titles, int numExp) {\n
+        try {\n
+            double[] times = new double[titles.length];\n
+            final int NUM_EXP = 50;\n
+            for(int i = 0; i < NUM_EXP; i++) {\n
+                for(int j = 0; j < titles.length; j++) {\n
+                    Scanner fileScanner = new Scanner(new File(titles[j]));\n
+                    Stopwatch st = new Stopwatch();\n
+                    st.start();\n
+                    Map<String, Integer> words = countWordsWithMap(fileScanner);\n
+                    st.stop();\n
+                    System.out.println(words.size());\n
+                    times[j] += st.time();\n
+                    fileScanner.close();\n
+                }\n
+            }\n
+            for(double a : times)\n
+                System.out.println(a / NUM_EXP);\n
+        }\n
+        catch(FileNotFoundException e) {\n
+            System.out.println("Problem reading the data file. Exiting the program." + e);\n
+        }\n
+    }\n
+
+
+    // pre: titles != null, elements of titles refer to files in the\n
+    // same path as this program, numExp >= 0\n
+    // read words from files and print average time to cound words.\n
+    private static void timingExpWithArrayList(String[] titles, int numExp) {\n
+        try {\n
+            double[] times = new double[titles.length];\n
+            for(int i = 0; i < numExp; i++) {\n
+                for(int j = 0; j < titles.length; j++) {\n
+                    Scanner fileScanner = new Scanner(new File(titles[j]));\n
+                    Stopwatch st = new Stopwatch();\n
+                    st.start();\n
+                    ArrayList<String> words = countWordsWithArrayList(fileScanner);\n
+                    st.stop();\n
+                    times[j] += st.time();\n
+                    fileScanner.close();\n
+                }\n
+            }
+            for(int i = 0; i < titles.length; i++)\n
+                System.out.println("Average time for " + titles[i] + ": " + (times[i] / numExp));\n
+        }\n
+        catch(FileNotFoundException e) {\n
+            System.out.println("Problem reading the data file. Exiting the program." + e);\n
+        }\n
+    }\n
+
+
+    // try to set look and feel to same as system\n
+    private static void setLookAndFeel() {\n
+        try {\n
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());\n
+        }\n
+        catch(Exception e) {\n
+            System.out.println("Unable to set look at feel to local settings. " +\\n
+            "Continuing with default Java look and feel.");\n
+        }\n
+    }\n
+
+
+    /** Method to choose a file using a window.\n
+     * @return the file chosen by the user. Returns null if no file picked.\n
+     */\n
+    private static File getFile() {\n
+        // create a GUI window to pick the text to evaluate\n
+        JFileChooser chooser = new JFileChooser(".");\n
+        chooser.setDialogTitle("Select File To Count Words:");\n
+        int retval = chooser.showOpenDialog(null);\n
+        File f =null;\n
+        chooser.grabFocus();\n
+        if (retval == JFileChooser.APPROVE_OPTION)\n
+            f = chooser.getSelectedFile();\n
+        return f;\n
+    }\n
+}]]>
+    </string>
 
 </resources>

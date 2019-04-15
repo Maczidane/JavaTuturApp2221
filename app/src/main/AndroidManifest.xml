@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.easyhouse24.javatuturapp">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -12,7 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name=".Program_6_Activity"
+            android:theme="@style/AppThemeNo"/>
+        <activity
+            android:name=".Program_4_Activity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".Program_3_Activity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".Program_5_Activity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".Program_2_Activity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".Program_1_Activity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".ProgramsActivity"
+            android:theme="@style/AppThemeNo" />
         <activity
             android:name=".TutorialActivity"
             android:theme="@style/AppThemeNo" />
@@ -26,7 +46,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
         <service android:name=".MusicService" />
+
         <activity
             android:name=".QuizActivity"
             android:theme="@style/AppThemeNo" />

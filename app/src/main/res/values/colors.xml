@@ -20,6 +20,7 @@
     <color name="yello">#FFB300</color>
     <color name="green">#00BFA5</color>
     <color name="white">#fff</color>
+    <color name="back_program">#282923</color>
 
     <color name="black">#000000</color>
     <color name="dim_gray">#bdbdbd</color>

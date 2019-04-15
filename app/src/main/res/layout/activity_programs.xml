@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProgramsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_programs"
+        android:layout_width="match_parent"
+
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+
+
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+        app:titleTextColor="@color/white" />
+
+
+
+    <LinearLayout
+        android:id="@+id/cardLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_programs"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_1_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_1_description"
+            app:title="Factorial  using Loops" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_2_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_2_description"
+            app:title="String Manipulations" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_3_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_3_description"
+            app:title="Binary Converter" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_4_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_4_descriptioon"
+            app:title="Writing ints to file" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_5_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_5_description"
+            app:title="PrimeEx" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_6_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_6_description"
+            app:title="World Count" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

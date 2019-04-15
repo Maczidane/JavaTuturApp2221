@@ -158,6 +158,14 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        cardViewPrograms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p =  new Intent(getApplicationContext(),ProgramsActivity.class);
+                startActivity(p);
+            }
+        });
+
 
     }
 

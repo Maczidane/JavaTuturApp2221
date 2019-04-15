@@ -313,7 +313,17 @@ public class QuizActivity extends AppCompatActivity {
                             TapTarget.forView(findViewById(R.id.textView4), "Number of Questions", spannedDesc1)
                                     .dimColor(android.R.color.black)
                                     .outerCircleColor(R.color.colorPrimary)
+                                    .cancelable(false),
+                            TapTarget.forView(findViewById(R.id.textView_questionaire), "Solution", "After answer is selected, question will be in black and solution in green")
+                                    .outerCircleColor(R.color.s1)
                                     .cancelable(false)
+                                    .tintTarget(true)
+                                    .targetCircleColor(R.color.white)
+                                    .descriptionTextColor(R.color.black)
+                                    .dimColor(R.color.white)
+
+
+
                     )
 
                     .listener(new TapTargetSequence.Listener() {
@@ -327,9 +337,11 @@ public class QuizActivity extends AppCompatActivity {
                             // Handle count down timer
                             if (mCountDownTimer == null) {
                                 mCountDownTimer.start();
+                                questionCounter = 0;
                             } else {
                                 mCountDownTimer.cancel();
                                 mCountDownTimer.start();
+                                questionCounter = 0;
                             }
                             sequence.start();
                         }
