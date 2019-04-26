@@ -1,7 +1,10 @@
 package com.easyhouse24.javatuturapp;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -91,6 +94,26 @@ public class ProgramsActivity extends AppCompatActivity {
             }
         });
 
+        Boolean QuizFirst = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("QuizFirst2", true);
+
+        if(QuizFirst)
+        {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setPositiveButton("Get App", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    callShare();
+                    getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("QuizFirst2", false).apply();
+                }
+            });
+            alert.setNegativeButton("Leave It", null);
+
+            alert.setMessage("Here you can view the source codes to some of our sample programs. To see the program run , you can copy the codes an paste in an IDE. We recommended and IDE for you. Do you want to download IDE now ?");
+            alert.show();
+
+        }
+
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,6 +172,18 @@ public class ProgramsActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+
+    public void callShare() {
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+
+
+        //Copy App URL from Google Play Store.
+        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.duy.compiler.javanide"));
+
+        startActivity(intent);
+
     }
 
     public void hanRun(){

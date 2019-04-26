@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -262,12 +263,14 @@ public class QuestionFragment extends Fragment {
 
 
     public void callShare() {
-        Intent i = new Intent(Intent.ACTION_SEND);
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
 
-        i.setType("text/plain");
-        i.putExtra(Intent.EXTRA_SUBJECT, "http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp");
-        i.putExtra(Intent.EXTRA_TEXT, "http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp");
-        startActivity(Intent.createChooser(i, "Get App Using"));
+
+        //Copy App URL from Google Play Store.
+        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.duy.compiler.javanide"));
+
+        startActivity(intent);
+
     }
 
 
