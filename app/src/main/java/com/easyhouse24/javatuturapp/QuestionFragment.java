@@ -16,6 +16,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
@@ -38,7 +46,10 @@ public class QuestionFragment extends Fragment {
     private static final String KEY_HIGHSCORE1 = "keyHighscore1";
     private static final String KEY_HIGHSCORE2 = "keyHighscore2";
     private static final String KEY_HIGHSCORE3 = "keyHighscore3";
+    private static final String FILE_NAME_GOLD = "gold.txt";
 
+    private static final String FILE_NAME_SILVER = "silver.txt";
+    private static final String FILE_NAME_BRONZE = "bronze.txt";
     private int highscore;
 
     private TextView textViewbronse;
@@ -66,9 +77,13 @@ public class QuestionFragment extends Fragment {
         textViewSilver = (TextView) v.findViewById(R.id.textViewSilver);
         textViewGold = (TextView) v.findViewById(R.id.textViewGold);
 
-       loadHighscore();
+        String gold = textViewGold.getText().toString();
+        int gold1 = Integer.valueOf(gold);
+        if (gold1 >= 3) {
+            SuccessAlert();
+        }
 
-
+        loadHighscore();
 
 
         mButton = (Button) v.findViewById(R.id.btn_start_quiz);
@@ -105,54 +120,118 @@ public class QuestionFragment extends Fragment {
     }
 
     private void loadHighscore() {
-        SharedPreferences prefSilver = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
-
-        int highscoreSilver = prefSilver.getInt(KEY_HIGHSCORE2, 0);
 
 
-        SharedPreferences prefGold = getActivity().getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
+        FileInputStream fis = null;
 
-        int highscoreGold = prefGold.getInt(KEY_HIGHSCORE1, 0);
+        try {
+            fis = getContext().openFileInput(FILE_NAME_GOLD);
 
-        SharedPreferences prefBronze = getActivity().getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
-        int highscoreBronze = prefBronze.getInt(KEY_HIGHSCORE3, 0);
+            InputStreamReader isr = new InputStreamReader(fis);
+
+            BufferedReader br = new BufferedReader(isr);
+
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while ((text = br.readLine() ) != null){
+                sb.append(text).append("");
+                textViewGold.setText(sb.toString());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            if (fis != null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
 
 
 
-        if (highscoreSilver >= 3 && highscoreGold >= 2 && highscoreBronze >= 5) {
+        FileInputStream fisSilver = null;
+
+        try {
+            fisSilver = getContext().openFileInput(FILE_NAME_SILVER);
+
+            InputStreamReader isr = new InputStreamReader(fisSilver);
+
+            BufferedReader br = new BufferedReader(isr);
+
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while ((text = br.readLine() ) != null){
+                sb.append(text).append("");
+                textViewSilver.setText(sb.toString());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            if (fisSilver != null){
+                try {
+                    fisSilver.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+        FileInputStream fisBronze = null;
+
+        try {
+            fisBronze = getContext().openFileInput(FILE_NAME_BRONZE);
+
+            InputStreamReader isr = new InputStreamReader(fisBronze);
+
+            BufferedReader br = new BufferedReader(isr);
+
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while ((text = br.readLine() ) != null){
+                sb.append(text).append("");
+                textViewbronse.setText(sb.toString());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            if (fisBronze != null){
+                try {
+                    fisBronze.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+        String gold = textViewGold.getText().toString();
+        int gold1 = Integer.valueOf(gold);
+        if (gold1 >= 3) {
             SuccessAlert();
         }
-
-        else if(highscoreGold >= 3)
-        {         SuccessAlert();
-
-        }
-
-
-
-
-        int silver20 =  highscoreSilver;
-
-        String silver3 = String.valueOf(silver20);
-        textViewSilver.setText(silver3);
-
-        int gold20 =  highscoreGold;
-
-        String gold3 = String.valueOf(gold20);
-        textViewSilver.setText(gold3);
-
-        int bronze20 = highscoreBronze;
-
-
-        String bronze3 = String.valueOf(bronze20);
-        textViewSilver.setText(bronze3);
 
 
 
     }
 
     private void updateHighscore(int highscoreNew) {
-        store();
+
         highscore = highscoreNew;
 
         String gold = textViewGold.getText().toString();
@@ -172,25 +251,26 @@ public class QuestionFragment extends Fragment {
 
             String silver3 = String.valueOf(silver2);
             textViewSilver.setText(silver3);
-            store();
+
 
 
         } else if (highscoreNew >= 9) {
 
 
-
-
             int gold2 = gold1 + 1;
 
-            if (gold2 >= 3)
-            {
+
+
+
+
+            if (gold1 >= 3) {
                 SuccessAlert();
             }
 
             String gold3 = String.valueOf(gold2);
             textViewGold.setText(gold3);
 
-            store();
+
 
 
         } else if (highscore >= 5 && highscore < 7) {
@@ -210,37 +290,84 @@ public class QuestionFragment extends Fragment {
 
     }
 
-    public void store(){
-
-        AlertDialog.Builder sha = new AlertDialog.Builder(getContext());
-
-        sha.setMessage("Hey");
-
-        sha.setCancelable(true);
-        sha.show();
+    public void store() {
 
 
         String gold11 = textViewGold.getText().toString();
         String silver11 = textViewSilver.getText().toString();
         String bronze11 = textViewbronse.getText().toString();
 
+        FileOutputStream fileOutputStream = null;
 
-        int gold21 = Integer.parseInt(gold11);
-        int silver21 = Integer.parseInt(silver11);
-        int bronze21 = Integer.parseInt(bronze11);
+        try {
+            fileOutputStream = getContext().openFileOutput(FILE_NAME_GOLD,MODE_PRIVATE);
+            try {
+                fileOutputStream.write(gold11.getBytes());
 
-        SharedPreferences prefBronze1 = getActivity().getSharedPreferences(SHARED_PREF_Bronze, MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = prefBronze1.edit();
-        editor2.putInt(KEY_HIGHSCORE3, bronze21).apply();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (fileOutputStream != null){
+                try {
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
-        SharedPreferences prefGold1 = getActivity().getSharedPreferences(SHARED_PREF_GOLD, MODE_PRIVATE);
-        SharedPreferences.Editor editor1 = prefGold1.edit();
-        editor1.putInt(KEY_HIGHSCORE1, gold21).apply();
+
+        FileOutputStream fileOutputStreamSilver = null;
+
+        try {
+            fileOutputStreamSilver = getContext().openFileOutput(FILE_NAME_SILVER,MODE_PRIVATE);
+            try {
+                fileOutputStreamSilver.write(silver11.getBytes());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (fileOutputStreamSilver != null){
+                try {
+                    fileOutputStreamSilver.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
 
-        SharedPreferences prefSilver1 = getActivity().getSharedPreferences(SHARED_PREF_SILVER, MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefSilver1.edit();
-        editor.putInt(KEY_HIGHSCORE2, silver21).apply();
+        FileOutputStream fileOutputStreamBronze = null;
+
+        try {
+            fileOutputStreamBronze = getContext().openFileOutput(FILE_NAME_BRONZE,MODE_PRIVATE);
+            try {
+                fileOutputStreamBronze.write(bronze11.getBytes());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (fileOutputStreamBronze != null){
+                try {
+                    fileOutputStreamBronze.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
 
     }
 

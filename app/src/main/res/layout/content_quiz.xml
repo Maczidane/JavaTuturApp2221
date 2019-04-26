@@ -87,28 +87,24 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingEnd="15dp"
                             android:buttonTint="@color/black"
                             android:freezesText="true"
+                            android:paddingEnd="15dp"
                             android:text="RadioButton" />
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton2"
-                            android:paddingEnd="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
                             android:buttonTint="@color/black"
+
                             android:freezesText="true"
+                            android:paddingEnd="15dp"
                             android:text="RadioButton" />
 
                         <android.support.v7.widget.AppCompatRadioButton
                             android:id="@+id/radioButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingEnd="15dp"
-                            android:layout_weight="1"
                             android:buttonTint="@color/black"
                             android:freezesText="true"
                             android:text="RadioButton" />
@@ -117,25 +113,29 @@
                             android:id="@+id/radioButton4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingEnd="15dp"
                             android:layout_weight="1"
                             android:buttonTint="@color/black"
                             android:freezesText="true"
+                            android:paddingEnd="15dp"
                             android:text="RadioButton" />
                     </RadioGroup>
 
                     <TextView
                         android:id="@+id/textView4"
 
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginLeft="8dp"
+
                         android:layout_marginTop="52dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
                         android:freezesText="true"
+                        android:paddingEnd="15dp"
                         android:text="@string/question"
                         android:textColor="@color/colorBlack"
                         android:textStyle="normal"
@@ -214,6 +214,7 @@
                             android:id="@+id/layout"
                             android:layout_width="match_parent"
                             android:layout_height="fill_parent">
+
                             <android.support.constraint.ConstraintLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent">
@@ -229,7 +230,6 @@
                                     android:textColor="@color/colorBlack"
 
 
-
                                     android:textSize="20sp"
                                     app:layout_constraintBottom_toTopOf="@+id/textViewSolution"
                                     app:layout_constraintTop_toTopOf="parent" />
@@ -238,7 +238,6 @@
                                     android:id="@+id/textViewSolution"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-
 
 
                                     android:layout_marginStart="8dp"
@@ -257,7 +256,6 @@
 
 
                     </android.support.v4.widget.NestedScrollView>
-
 
 
                     <Button
