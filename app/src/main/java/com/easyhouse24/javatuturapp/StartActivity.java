@@ -79,6 +79,20 @@ public class StartActivity extends AppCompatActivity {
         cardViewShare = (CardView) findViewById(R.id.share);
         cardViewQuestions = (CardView) findViewById(R.id.questions);
 
+        Boolean QuizFirst = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("QuizFirst1", true);
+
+        if(QuizFirst)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK",null);
+            builder.setMessage("Welcome to my app. This app teaches the concept of java programming to people who want to learn java. Users can also answer mcq questions from the mcq section. Enjoy ... ");
+            builder.show();
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("QuizFirst1", false).apply();
+        }
+
+
+
         cardViewQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +163,7 @@ public class StartActivity extends AppCompatActivity {
 
                     i.setType("text/plain");
                     i.putExtra(Intent.EXTRA_SUBJECT, "http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp");
-                    i.putExtra(Intent.EXTRA_TEXT, "http://www.url.com");
+                    i.putExtra(Intent.EXTRA_TEXT, "Hello check out our Java programming tutorial app on Play store.Click on this link http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp to see");
                     startActivity(Intent.createChooser(i, "Share App Using"));
 
 
@@ -163,6 +177,14 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent p =  new Intent(getApplicationContext(),ProgramsActivity.class);
                 startActivity(p);
+            }
+        });
+
+        cardViewHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h = new Intent(getApplicationContext(), HelpActivity.class);
+                startActivity(h);
             }
         });
 

@@ -1107,5 +1107,15 @@ public class WordCount {\n
     }\n
 }]]>
     </string>
+    <string name="set_6">Questions Set 6 (Regular Expressions)\n\n\n\n\n</string>
+    <string name="help_section">Help</string>
+    <string name="help_notes">Welcome to my Java programming tutorial App.The app is divided into six different sections listed below:\n\n
+    \t <b>Java Basic section</b> : Here you will find tutorial notes related to the Basic concepts of java programming (Variables, Strings , Characters, Data types, Arrays, Loops, etc).\n\n
+    \t <b>Java Advanced section</b> :  Here you will find tutorial notes related to the Advanced concepts of java programming (Constructors, Regular Expressions,Modifiers types etc).\n\n
+    \t <b>Questions section</b> : Here you will presented with questions to answer with respected to what you have learned in java. Most questions are MCQ\'s. There\'s a trophy mechanism where you unlock a link to our next app with 3 gold trophies obtained when answering questions.\n\n
+    \t <b>Sample Programs section</b> : View our selected sample programs which solve a particular scenario. Users can also copy each written code to clipboard and use them outside the app.\n\n
+    \t <b>Share section</b> : Love this app share with friends and obtain their feedback related to  the app. Click on share section and choose which sharing method to use.\n\n
+    \t <b>Help section</b> : Obtain help and notes related to  this App.\n\n
+    </string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.easyhouse24.javatuturapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class SetSelectFragment extends Fragment {
+
 
     private CardView cardView1;
     private CardView cardView2;
@@ -83,9 +85,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set1");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -94,9 +94,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set1");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -104,9 +102,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set2");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -115,9 +111,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set2");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -125,9 +119,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set3");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -136,9 +128,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set3");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -146,9 +136,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set4");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -157,9 +145,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set4");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -167,9 +153,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set5");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -178,9 +162,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set5");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -189,9 +171,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set6");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -200,9 +180,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set6");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -210,9 +188,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set7");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -221,9 +197,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set7");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -231,9 +205,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set8");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -242,9 +214,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set8");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -252,9 +222,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set9");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
 
             }
         });
@@ -263,9 +231,7 @@ public class SetSelectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 putDifficulty("set9");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, questionFragment, "NewFragmentTag");
-                ft.commit();
+                startQuestionsActivity();
             }
         });
 
@@ -276,6 +242,13 @@ public class SetSelectFragment extends Fragment {
 
         return view;
     }
+
+    public void startQuestionsActivity(){
+        Intent v = new Intent(getContext(),Main2Activity.class);
+        startActivity(v);
+    }
+
+
 
     public void putDifficulty(String number)
     {

@@ -13,8 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Program_6_Activity"
+        <activity android:name=".SplashScreenActivity"
+            android:theme="@style/AppThemeNo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".StructuralActivity"
             android:theme="@style/AppThemeNo"/>
+        <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".HelpActivity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".Program_6_Activity"
+            android:theme="@style/AppThemeNo" />
         <activity
             android:name=".Program_4_Activity"
             android:theme="@style/AppThemeNo" />
@@ -38,13 +54,9 @@
             android:theme="@style/AppThemeNo" />
         <activity
             android:name=".StartActivity"
-            android:theme="@style/AppThemeNo">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppThemeNo" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity android:name=".MainActivity" />
 
         <service android:name=".MusicService" />

@@ -67,7 +67,7 @@ public class RegularFragment extends Fragment {
                         }
 
 
-                        askChange();
+                       showSelectionTab();
 
                         //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
                         break;
@@ -113,5 +113,44 @@ public class RegularFragment extends Fragment {
         builder.show();
 
     }
+
+
+    public void showSelectionTab(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+        alert.setMessage("Congratulations, you have finished learning our tutorials. Do you which to answer questions related to what you have learned in the previous topics?");
+        alert.setNegativeButton("Answer Questions", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                QuestionFragment questionFragment;
+                questionFragment = new QuestionFragment();
+                putDifficulty("set6");
+                Intent v = new Intent(getContext(),Main2Activity.class);
+                startActivity(v);
+            }
+        });
+
+        alert.setPositiveButton("Home", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent f = new Intent(getActivity(), StartActivity.class);
+                startActivity(f);
+            }
+        });
+
+        alert.setIcon(R.drawable.ic_add_alert_black_24dp);
+        alert.show();
+    }
+
+    public void putDifficulty(String number)
+    {
+        SharedPreferences pref = getActivity().getSharedPreferences("IS_DIFFICULTY", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("X_DIFFICULTY", number);
+        editor.apply();
+    }
+
 
 }

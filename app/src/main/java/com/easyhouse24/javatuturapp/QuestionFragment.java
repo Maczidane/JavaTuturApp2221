@@ -65,7 +65,7 @@ public class QuestionFragment extends Fragment {
         textViewSilver = (TextView) v.findViewById(R.id.textViewSilver);
         textViewGold = (TextView) v.findViewById(R.id.textViewGold);
 
-        loadHighscore();
+       loadHighscore();
 
 
 
@@ -171,6 +171,7 @@ public class QuestionFragment extends Fragment {
 
             String silver3 = String.valueOf(silver2);
             textViewSilver.setText(silver3);
+            store();
 
 
         } else if (highscoreNew >= 9) {
@@ -188,6 +189,8 @@ public class QuestionFragment extends Fragment {
             String gold3 = String.valueOf(gold2);
             textViewGold.setText(gold3);
 
+            store();
+
 
         } else if (highscore >= 5 && highscore < 7) {
 
@@ -196,16 +199,26 @@ public class QuestionFragment extends Fragment {
 
             String bronze3 = String.valueOf(bronze2);
             textViewbronse.setText(bronze3);
+            store();
 
 
         }
 
 
-
+        store();
 
     }
 
     public void store(){
+
+        AlertDialog.Builder sha = new AlertDialog.Builder(getContext());
+
+        sha.setMessage("Hey");
+
+        sha.setCancelable(true);
+        sha.show();
+
+
         String gold11 = textViewGold.getText().toString();
         String silver11 = textViewSilver.getText().toString();
         String bronze11 = textViewbronse.getText().toString();
@@ -253,7 +266,23 @@ public class QuestionFragment extends Fragment {
 
         i.setType("text/plain");
         i.putExtra(Intent.EXTRA_SUBJECT, "http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp");
-        i.putExtra(Intent.EXTRA_TEXT, "http://www.url.com");
+        i.putExtra(Intent.EXTRA_TEXT, "http://play.google.com/store/apps/details?id=com.easyhouse24.javatuturapp");
         startActivity(Intent.createChooser(i, "Get App Using"));
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        loadHighscore();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadHighscore();
+    }
+
+
 }
+

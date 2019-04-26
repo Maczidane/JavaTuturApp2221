@@ -1,7 +1,10 @@
 package com.easyhouse24.javatuturapp;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -64,14 +67,7 @@ public class DecisionFragment extends Fragment {
                             editor.commit();
                         }
 
-                        regularFragment = new RegularFragment();
-                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.replace(R.id.frame_tutorial, regularFragment, "NewFragmentTag");
-                        ft.commit();
-
-
-
-                        //Toast.makeText(getContext(),"Still to continue filling tutorials",Toast.LENGTH_LONG).show();
+                        showSelectionTab();
                         break;
 
                     case R.id.tutorial_back:
@@ -91,5 +87,44 @@ public class DecisionFragment extends Fragment {
 
         return view;
     }
+
+    public void showSelectionTab(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+        alert.setMessage("Do you which to answer questions related to what you have learned in the previous topics?");
+        alert.setNegativeButton("Answer Questions", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                QuestionFragment questionFragment;
+                questionFragment = new QuestionFragment();
+                putDifficulty("set5");
+                Intent v = new Intent(getContext(),Main2Activity.class);
+                startActivity(v);
+            }
+        });
+
+        alert.setPositiveButton("Continue ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                regularFragment = new RegularFragment();
+                final FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                ft1.replace(R.id.frame_tutorial, regularFragment, "NewFragmentTag");
+                ft1.commit();
+            }
+        });
+
+        alert.setIcon(R.drawable.ic_add_alert_black_24dp);
+        alert.show();
+    }
+
+    public void putDifficulty(String number)
+    {
+        SharedPreferences pref = getActivity().getSharedPreferences("IS_DIFFICULTY", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("X_DIFFICULTY", number);
+        editor.apply();
+    }
+
 
 }

@@ -17,7 +17,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/CardViewBasic_1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:clickable="true"
 
@@ -33,7 +33,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 1"
+            android:text="Questions Set 1 (Basic Syntax, Variables,Data types and Numbers)"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
@@ -60,7 +60,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 2"
+            android:text="Questions Set 2 (Characters, Strings and loops)"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
@@ -87,7 +87,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 3"
+            android:text="Questions Set 3 (Arrays, Date and Time)"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
@@ -114,7 +114,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 4"
+            android:text="Questions Set 4 (Objects, Classes and Constructors)"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
@@ -141,7 +141,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 5"
+            android:text="Questions Set 5 (Modifier, Decision Making)"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
@@ -168,7 +168,7 @@
             android:clickable="true"
 
             android:padding="2dp"
-            android:text="Questions Set 6"
+            android:text="@string/set_6"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#4d4d4d" />
 
