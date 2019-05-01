@@ -18,7 +18,7 @@
         app:itemTextColor="@color/nav_items_color"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        app:menu="@menu/nav_items" />
+         />
 
     <FrameLayout
         android:id="@+id/frame"

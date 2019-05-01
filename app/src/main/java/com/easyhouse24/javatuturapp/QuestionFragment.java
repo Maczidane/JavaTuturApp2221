@@ -373,19 +373,24 @@ public class QuestionFragment extends Fragment {
 
 
     public void SuccessAlert() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        alert.setIcon(R.drawable.ic_stars_black_24dp);
-        alert.setMessage("Congratulations , you have unlocked a new app!");
+        Boolean QuizFirst = getContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("QuizFirst4", true);
 
-        alert.setPositiveButton("Get App", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                callShare();
-            }
-        });
+        if(QuizFirst) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+            alert.setIcon(R.drawable.ic_stars_black_24dp);
+            alert.setMessage("Congratulations , you have unlocked a new app!");
 
-        alert.setNegativeButton("Leave It", null);
-        alert.show();
+            alert.setPositiveButton("Get App", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    callShare();
+                    getContext(). getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("QuizFirst4", false).apply();
+                }
+            });
+
+            alert.setNegativeButton("Leave It", null);
+            alert.show();
+        }
     }
 
 

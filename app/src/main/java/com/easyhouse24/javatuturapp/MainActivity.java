@@ -1,5 +1,6 @@
 package com.easyhouse24.javatuturapp;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -12,9 +13,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -110,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(),frag,Toast.LENGTH_LONG).show();
 
                 setFragment(setSelectFragment);
+
+                mBottomNavigationView.inflateMenu(R.menu.qustions_menu);
                 mBottomNavigationView.setSelectedItemId(R.id.nav_questions);
                 mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -120,6 +126,62 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.nav_back:
                                 onBackPressed();
                                 return true;
+                            case R.id.nav_programs:
+                                PopupMenu popupMenu = new PopupMenu(MainActivity.this, mBottomNavigationView);
+
+                                MenuInflater menuInflater = popupMenu.getMenuInflater();
+
+                                menuInflater.inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                                    @Override
+                                    public boolean onMenuItemClick(MenuItem item) {
+
+                                        switch (item.getItemId())
+                                        {
+                                            case R.id.nav_loops:
+
+                                                Intent v = new Intent(getApplicationContext(),Program_1_Activity.class);
+                                                startActivity(v);
+                                               // Toast.makeText(getApplicationContext(),"Loops Clicked",Toast.LENGTH_SHORT).show();
+                                                return true;
+
+                                            case R.id.nav_strings:
+
+                                                Intent s = new Intent(getApplicationContext(),Program_2_Activity.class);
+                                                startActivity(s);
+                                                return true;
+
+                                            case R.id.nav_binary:
+
+                                                Intent w = new Intent(getApplicationContext(),Program_3_Activity.class);
+                                                startActivity(w);
+                                                return true;
+
+                                            case R.id.nav_write:
+
+                                                Intent y = new Intent(getApplicationContext(),Program_4_Activity.class);
+                                                startActivity(y);
+                                                return true;
+
+                                            case R.id.nav_prime:
+
+                                                Intent f = new Intent(getApplicationContext(),Program_5_Activity.class);
+                                                startActivity(f);
+                                                return true;
+
+                                            case R.id.nav_world:
+
+                                                Intent z = new Intent(getApplicationContext(),Program_6_Activity.class);
+                                                startActivity(z);
+                                                return true;
+                                        }
+
+                                        return false;
+                                    }
+                                });
+
+                                popupMenu.show();
 
 
 
@@ -137,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
             else if (frag.equals("Basic")){
 
                 setFragment(basicFragment);
+                mBottomNavigationView.inflateMenu(R.menu.nav_items);
                 mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -160,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else if (frag.equals("Advanced")){
                 setFragment(advancedFragment);
+                mBottomNavigationView.inflateMenu(R.menu.nav_items);
                 mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -196,6 +260,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.nav_loops:
+                Toast.makeText(getApplicationContext(),"Loops Clicked",Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return false;
     }
 
     public void questionsClick(View v){
@@ -239,6 +316,8 @@ public class MainActivity extends AppCompatActivity {
         mBottomNavigationView.setItemBackgroundResource(R.color.materialGreen);
 
     }
+
+
 
 
 

@@ -730,22 +730,21 @@ import java.util.regex.Pattern;\n
     <string name="des_1_programs">A simple example of using for loops to calculate factorial. Uses the built in int data type so only good to 13!</string>
     <string name="program_copied">Program Copied to Clipboard</string>
     <string name="listing_java_1"><![CDATA[
-    \tclass FactorialExample2{ \n
-    \tstatic int factorial(int n){ \n
-    \tif (n == 0)    \n
-    \t return 1;    \n
-    \telse    \n
-    \t  return(n * factorial(n-1));   \n
-   \t}    \n
-   \tpublic static void main(String args[]){  \n
-   \t int i,fact=1;  \n
-   \t int number=4;//It is the number to calculate factorial   \n
-   \t fact = factorial(number);   \n
-   \t System.out.println("Factorial of "+number+" is: "+fact);  \n
-   \t}  \n
-}  
+ \tpublic class Factorial {\n
 
-           }
+    \tpublic static void main(String[] args) {\n
+
+        \tint num = 10;\n
+        \tlong factorial = 1;\n
+        \tfor(int i = 1; i <= num; ++i)\n
+        \t{\n
+            \t// factorial = factorial * i;\n
+           \t factorial *= i;\n
+        \t}\n
+        \tSystem.out.printf("Factorial of %d = %d", num, factorial);\n
+    \t}\n
+\t}\n
+
 ]]></string>
     <string name="listing_java_5"><![CDATA[
     import java.math.BigInteger;

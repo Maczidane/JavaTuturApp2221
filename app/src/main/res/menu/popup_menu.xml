@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_loops"
+        android:icon="@drawable/ic_loop_black_24dp"
+        android:title="Factorial using Loops" />
+    <item
+        android:id="@+id/nav_strings"
+        android:icon="@drawable/ic_strikethrough_s_black_24dp"
+        android:title="String Manipulations" />
+    <item
+        android:id="@+id/nav_binary"
+        android:icon="@drawable/ic_exposure_plus_2_black_24dp"
+        android:title="Binary Converter" />
+    <item
+        android:id="@+id/nav_write"
+        android:icon="@drawable/ic_attach_file_black_24dp"
+        android:title="Writing ints to a File" />
+    <item
+        android:id="@+id/nav_prime"
+        android:icon="@drawable/ic_queue_play_next_black_24dp"
+        android:title="PrimeEx" />
+    <item
+        android:id="@+id/nav_world"
+        android:icon="@drawable/ic_format_list_numbered_black_24dp"
+        android:title="World Count" />
+
+</menu>
