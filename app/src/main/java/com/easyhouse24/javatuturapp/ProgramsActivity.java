@@ -40,6 +40,7 @@ public class ProgramsActivity extends AppCompatActivity {
     private TextView textView4;
     private TextView textView5;
     private TextView textView6;
+    private TextView textView7;
 
 
     private Toolbar toolbar;
@@ -50,6 +51,7 @@ public class ProgramsActivity extends AppCompatActivity {
     private Button button4;
     private Button button5;
     private Button button6;
+    private Button button7;
 
     private ExpandableCardView cardView1;
     private ExpandableCardView cardView2;
@@ -57,6 +59,7 @@ public class ProgramsActivity extends AppCompatActivity {
     private ExpandableCardView cardView4;
     private ExpandableCardView cardView5;
     private ExpandableCardView cardView6;
+    private ExpandableCardView cardView7;
 
 
     @Override
@@ -74,6 +77,7 @@ public class ProgramsActivity extends AppCompatActivity {
         cardView4 = findViewById(R.id.program_4_card);
         cardView5 = findViewById(R.id.program_5_card);
         cardView6 = findViewById(R.id.program_6_card);
+        cardView7 = findViewById(R.id.program_7_card);
 
 
         button1 = (Button) findViewById(R.id.see_1);
@@ -82,6 +86,7 @@ public class ProgramsActivity extends AppCompatActivity {
         button4 = (Button) findViewById(R.id.see_4);
         button5 = (Button) findViewById(R.id.see_5);
         button6 = (Button) findViewById(R.id.see_6);
+        button7 = (Button) findViewById(R.id.see_7);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +155,14 @@ public class ProgramsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Program_6_Activity.class);
+
+                startActivity(i);
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Program_7_Activity.class);
 
                 startActivity(i);
             }

@@ -23,22 +23,21 @@ import io.github.kbiakov.codeview.adapters.Options;
 import io.github.kbiakov.codeview.classifier.CodeProcessor;
 import io.github.kbiakov.codeview.highlight.ColorTheme;
 
-public class Program_3_Activity extends AppCompatActivity {
+public class Program_7_Activity extends AppCompatActivity {
+
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_program_3_);
-
+        setContentView(R.layout.activity_program_7_);
         hanRun();
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_programs_3);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_programs_7);
 
 
         //Display codes in codeView format
         codeView();
-
 
 
         setSupportActionBar(toolbar);
@@ -54,9 +53,7 @@ public class Program_3_Activity extends AppCompatActivity {
         });
     }
 
-
-
-    private void codeView(){
+    private void codeView() {
 
         //Codes for CodeView
 
@@ -64,16 +61,14 @@ public class Program_3_Activity extends AppCompatActivity {
         CodeProcessor.init(this);
 
 
-        CodeView codeView = (CodeView) findViewById(R.id.code_view_3);
+        CodeView codeView = (CodeView) findViewById(R.id.code_view_7);
 
         codeView.setOptions(Options.Default.get(this)
                 .withLanguage("java")
-                .withCode(R.string.listing_java_3)
+                .withCode(R.string.listing_java_7)
                 .withTheme(ColorTheme.MONOKAI));
 
     }
-
-
 
     @Override
     protected void onStart() {
@@ -87,7 +82,7 @@ public class Program_3_Activity extends AppCompatActivity {
         //hanRun();
     }
 
-    public void hanRun(){
+    public void hanRun() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setTitle("Processing");
@@ -102,7 +97,7 @@ public class Program_3_Activity extends AppCompatActivity {
         };
 
         Handler han = new Handler();
-        han.postDelayed(run,6000);
+        han.postDelayed(run, 8000);
     }
 
 
@@ -140,15 +135,17 @@ public class Program_3_Activity extends AppCompatActivity {
                 }
                 return true;
 
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void startWeb(){
+
+
+    public void startWeb() {
         Intent t = new Intent(getApplicationContext(), WebActivity.class);
         startActivity(t);
     }
-
 
     public void createStyledToast() {
         LayoutInflater inflater = getLayoutInflater();
@@ -167,12 +164,11 @@ public class Program_3_Activity extends AppCompatActivity {
         //this item has your app icon
 
 
-        String string = getString (R.string.listing_java_3);
+        String string = getString(R.string.listing_java_7);
 
         // place your TextView's text in clipboard
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         clipboard.setText(string);
-
 
     }
 }

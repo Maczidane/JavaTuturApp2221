@@ -26,14 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_programs"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:orientation="vertical">
 
         <com.alespero.expandablecardview.ExpandableCardView
             android:id="@+id/program_1_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -47,7 +47,7 @@
             android:id="@+id/program_2_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -61,7 +61,7 @@
             android:id="@+id/program_3_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -75,7 +75,7 @@
             android:id="@+id/program_4_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -89,7 +89,7 @@
             android:id="@+id/program_5_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -103,7 +103,7 @@
             android:id="@+id/program_6_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="1dp"
 
 
             app:cardCornerRadius="8dp"
@@ -112,6 +112,21 @@
 
             app:inner_view="@layout/program_6_description"
             app:title="World Count" />
+
+        <com.alespero.expandablecardview.ExpandableCardView
+            android:id="@+id/program_7_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+
+
+            app:cardCornerRadius="8dp"
+            app:expandOnClick="true"
+
+
+            app:inner_view="@layout/program_7_description"
+            app:title="Loops" />
+
 
 
     </LinearLayout>

@@ -2,6 +2,10 @@ package com.easyhouse24.javatuturapp;
 
 import android.app.ProgressDialog;
 import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -115,10 +119,35 @@ public class Program_5_Activity extends AppCompatActivity {
 
 
                 return true;
+
+            case R.id.menu_item_run_1:
+
+                ConnectivityManager connectivityManager
+                        = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+
+                if (activeNetworkInfo == null)
+                {
+                    Toast.makeText(getApplicationContext(),"Please switch on your internet connection to run program",Toast.LENGTH_LONG).show();
+                }
+                else if (activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting()){
+                    copyClipboard();
+                    createStyledToast();
+                    startWeb();
+                }
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+    public void startWeb() {
+        Intent t = new Intent(getApplicationContext(), WebActivity.class);
+        startActivity(t);
+    }
+
 
     public void createStyledToast() {
         LayoutInflater inflater = getLayoutInflater();

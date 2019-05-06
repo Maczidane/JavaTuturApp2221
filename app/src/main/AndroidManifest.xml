@@ -4,7 +4,10 @@
     package="com.easyhouse24.javatuturapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"
+ />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,17 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashScreenActivity"
-            android:theme="@style/AppThemeNo" >
+        <activity android:name=".Program_7_Activity"
+            android:theme="@style/AppThemeNo"/>
+        <activity
+            android:name=".WebActivity"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppThemeNo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".StructuralActivity"
-            android:theme="@style/AppThemeNo"/>
+        <activity
+            android:name=".StructuralActivity"
+            android:theme="@style/AppThemeNo" />
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".HelpActivity"
@@ -55,8 +64,6 @@
         <activity
             android:name=".StartActivity"
             android:theme="@style/AppThemeNo" />
-
-
         <activity android:name=".MainActivity" />
 
         <service android:name=".MusicService" />

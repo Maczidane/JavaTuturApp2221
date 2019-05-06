@@ -6,4 +6,9 @@
         android:icon="@drawable/ic_content_copy_black_24dp"
         app:showAsAction="always"/>
 
+    <item android:id="@+id/menu_item_run_1"
+        android:title="copy"
+        android:icon="@drawable/ic_play_arrow_black_24dp"
+        app:showAsAction="always"/>
+
 </menu>

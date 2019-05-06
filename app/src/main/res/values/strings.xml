@@ -1118,5 +1118,27 @@ public class WordCount {\n
     \t <b>Share section</b> : Love this app share with friends and obtain their feedback related to  the app. Click on share section and choose which sharing method to use.\n\n
     \t <b>Help section</b> : Obtain help and notes related to  this App.\n\n
     </string>
+    <string name="listing_java_7"><![CDATA[// Java program to illustrate for loop.
+    public class forLoopDemo  {\n
+       \tpublic static void main(String args[])\n
+       \t{  \t\t// for loop begins when x=2\n
+       \t\t// and runs till x <=4\n
+       \t\tfor (int x = 2; x <= 4; x++)\n
+          \t\t\tSystem.out.println(\"Value of x:\" + x);\n
+
+          \tint z = 1; \n
+
+       \t // Exit when z becomes greater than 4 \n
+        \twhile (z <= 4) \n
+        \t{ \n
+            \tSystem.out.println(\"Value of z:\" + z);\n
+
+            \t// Increment the value of z for \n
+           \t // next iteration \n
+           \t z++; \n
+       \t } \n
+
+           \t}\n
+         }]]></string>
 
 </resources>

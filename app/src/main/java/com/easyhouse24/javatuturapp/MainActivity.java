@@ -169,6 +169,10 @@ public class MainActivity extends AppCompatActivity {
                                                 Intent f = new Intent(getApplicationContext(),Program_5_Activity.class);
                                                 startActivity(f);
                                                 return true;
+                                            case R.id.nav_loops_begin:
+                                                Intent q = new Intent(getApplicationContext(),Program_7_Activity.class);
+                                                startActivity(q);
+                                                return true;
 
                                             case R.id.nav_world:
 
